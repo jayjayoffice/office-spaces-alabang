@@ -24,6 +24,11 @@
         }
         .header img {
             height: 40px;
+            margin-right: 10px;
+        }
+        .header span {
+            font-size: 18px;
+            font-weight: bold;
         }
         .nav a {
             text-decoration: none;
@@ -34,7 +39,7 @@
         .hero {
             background: url('hero-image.png') center/cover no-repeat;
             height: 500px;
-            color: black;
+            color: white;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -63,6 +68,20 @@
             padding: 50px 20px;
             background-color: white;
             text-align: center;
+            background-size: cover;
+            background-position: center;
+        }
+        #why-alabang.section {
+            background-image: url('why-alabang.png');
+        }
+        #spaces.section {
+            background-image: url('available-spaces.png');
+        }
+        #services.section {
+            background-image: url('our-services.png');
+        }
+        #contact.section {
+            background-image: url('contact.png');
         }
         .section h2 {
             font-size: 28px;
@@ -79,6 +98,26 @@
             padding: 20px;
             border: 1px solid #ddd;
             border-radius: 10px;
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        .feature-box:hover .tooltip {
+            display: block;
+        }
+        .tooltip {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 14px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            margin-top: 10px;
+            z-index: 10;
         }
         .spaces {
             display: flex;
@@ -92,6 +131,7 @@
             border: 1px solid #ccc;
             border-radius: 10px;
             text-align: left;
+            background-color: rgba(255, 255, 255, 0.9);
         }
         .space-card h3 {
             margin: 0;
@@ -111,6 +151,9 @@
             align-items: center;
             max-width: 500px;
             margin: 0 auto;
+            background-color: rgba(255,255,255,0.9);
+            padding: 20px;
+            border-radius: 10px;
         }
         .contact-form input, .contact-form textarea {
             width: 100%;
@@ -136,7 +179,10 @@
 </head>
 <body>
     <div class="header">
-        <img src="logo001.png" alt="Office Spaces Alabang">
+        <div style="display: flex; align-items: center;">
+            <img src="logo001.png" alt="Office Spaces Alabang">
+            <span>Alabang Offices</span>
+        </div>
         <div class="nav">
             <a href="#home">Home</a>
             <a href="#why-alabang">Why Alabang?</a>
@@ -155,10 +201,18 @@
     <div class="section" id="why-alabang">
         <h2>Why Alabang?</h2>
         <div class="features">
-            <div class="feature-box">Strategic location between Makati and Laguna</div>
-            <div class="feature-box">Proximity to SLEX and Skyway</div>
-            <div class="feature-box">IT and PEZA-accredited buildings</div>
-            <div class="feature-box">Green spaces & modern infrastructure</div>
+            <div class="feature-box">
+                A Strategic Location for Growth
+                <div class="tooltip">Alabang is a gem for any business looking to grow. Tucked in southern Metro Manila, it’s got easy access to highways like SLEX and is close to the airport—perfect for connecting with clients. Plus, its residential vibe means shorter commutes for your team. It’s a friendly, strategic spot that blends convenience with opportunity.</div>
+            </div>
+            <div class="feature-box">
+                A Thriving Business Ecosystem
+                <div class="tooltip">Alabang stands out with its vibrant mix of modern offices like Filinvest City and Northgate Cyberzone, green spaces, and lifestyle spots. It’s a hub that attracts tech startups, large corporations, and creative teams, providing excellent networking and talent opportunities. The nearby Westgate Center and Alabang Town Center offer cozy cafés and upscale dining options for brainstorming sessions or client meetings. It’s a lively setting that boosts both work and enjoyment.</div>
+            </div>
+            <div class="feature-box">
+                Quality of Life Meets Professional Appeal
+                <div class="tooltip">Alabang offers a refreshing mix of work and relaxation. It’s calmer than central Manila, with green spaces and parks like River Park to unwind. Your team can enjoy a quick break or weekend outings at local malls, keeping spirits high. The office options here are impressive yet budget-friendly—a great pick for anyone aiming to settle in comfortably.</div>
+            </div>
         </div>
     </div>
 
@@ -168,19 +222,19 @@
             <div class="space-card">
                 <h3>Filinvest One</h3>
                 <p>Size: 100–500 sqm</p>
-                <p>Price: PHP 750–800/sqm</p>
+                <p>Price: PHP xxxxx/sqm</p>
                 <button>View Details</button>
             </div>
             <div class="space-card">
                 <h3>Asian Star Building</h3>
                 <p>Size: 150–400 sqm</p>
-                <p>Price: PHP 720–770/sqm</p>
+                <p>Price: PHP xxxxx/sqm</p>
                 <button>View Details</button>
             </div>
             <div class="space-card">
                 <h3>Vector One</h3>
                 <p>Size: 120–300 sqm</p>
-                <p>Price: PHP 700–750/sqm</p>
+                <p>Price: PHP xxxxx/sqm</p>
                 <button>View Details</button>
             </div>
         </div>
