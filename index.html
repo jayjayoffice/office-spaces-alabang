@@ -6,7 +6,7 @@
     <title>Office Spaces Alabang</title>
     <style>
         html {
-            scroll-behavior: smooth; /* Smooth scrolling for nav links */
+            scroll-behavior: smooth;
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -41,7 +41,7 @@
             position: relative;
         }
         .nav a:not(:last-child)::after {
-            content: '|'; /* Adds separator after each link except the last */
+            content: '|';
             position: absolute;
             right: -14px;
             color: #333;
@@ -76,7 +76,7 @@
         }
         .section {
             padding: 50px 20px;
-            background-color: #d3d3d3; /* Light gray fallback */
+            background-color: #d3d3d3;
             text-align: center;
             background-size: cover;
             background-position: center;
@@ -112,10 +112,11 @@
             background-color: rgba(255, 255, 255, 0.8);
         }
         .feature-box:hover .tooltip {
-            display: block; /* Show tooltip on hover for desktop */
+            display: block;
+            transform: translateY(0); /* Slide down to visible position */
         }
         .tooltip {
-            display: none; /* Hidden by default on desktop */
+            display: none;
             position: absolute;
             top: 100%;
             left: 0;
@@ -128,6 +129,8 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.15);
             margin-top: 10px;
             z-index: 10;
+            transform: translateY(-20px); /* Start above, off-screen */
+            transition: transform 0.3s ease-out; /* Animation for sliding */
         }
         .spaces {
             display: flex;
@@ -194,8 +197,10 @@
             .nav a {
                 margin: 5px 0;
             }
+            /* Keep separators on mobile */
             .nav a:not(:last-child)::after {
-                content: none; /* Remove separator on mobile for cleaner stacking */
+                content: '|';
+                right: -10px; /* Adjusted for mobile spacing */
             }
             .space-card {
                 width: 100%;
@@ -207,7 +212,7 @@
             .hero p {
                 font-size: 16px;
             }
-            /* Tooltips always visible on mobile */
+            /* Tooltips always visible on mobile, no animation */
             .feature-box .tooltip {
                 display: block;
                 position: static;
@@ -215,6 +220,8 @@
                 border: none;
                 padding: 5px 0;
                 font-size: 12px;
+                transform: none; /* No animation on mobile */
+                transition: none;
             }
         }
     </style>
@@ -282,7 +289,7 @@
         </div>
     </div>
 
-    <div class="section" id="services">
+    <rikesdiv class="section" id="services">
         <h2>Our Services</h2>
         <div class="features">
             <div class="feature-box">Office Matching</div>
