@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Office Spaces Alabang</title>
     <style>
+        html {
+            scroll-behavior: smooth; /* Smooth scrolling for nav links */
+        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -35,6 +38,13 @@
             color: #333;
             font-size: 16px;
             margin: 0 12px;
+            position: relative;
+        }
+        .nav a:not(:last-child)::after {
+            content: '|'; /* Adds separator after each link except the last */
+            position: absolute;
+            right: -14px;
+            color: #333;
         }
         .hero {
             background: url('hero-image.png') center/cover no-repeat;
@@ -101,8 +111,14 @@
             position: relative;
             background-color: rgba(255, 255, 255, 0.8);
         }
+        .feature-box:hover .tooltip {
+            display: block; /* Show tooltip on hover for desktop */
+        }
         .tooltip {
-            display: none;
+            display: none; /* Hidden by default on desktop */
+            position: absolute;
+            top: 100%;
+            left: 0;
             width: 100%;
             background-color: white;
             border: 1px solid #ccc;
@@ -111,6 +127,7 @@
             font-size: 14px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.15);
             margin-top: 10px;
+            z-index: 10;
         }
         .spaces {
             display: flex;
@@ -177,6 +194,9 @@
             .nav a {
                 margin: 5px 0;
             }
+            .nav a:not(:last-child)::after {
+                content: none; /* Remove separator on mobile for cleaner stacking */
+            }
             .space-card {
                 width: 100%;
                 max-width: 300px;
@@ -187,7 +207,7 @@
             .hero p {
                 font-size: 16px;
             }
-            /* Tooltips for mobile - show by default */
+            /* Tooltips always visible on mobile */
             .feature-box .tooltip {
                 display: block;
                 position: static;
