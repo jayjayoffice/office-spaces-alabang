@@ -98,14 +98,6 @@
         .section h2 {
             font-size: 28px;
             margin-bottom: 20px;
-            color: white;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        #services p.summary {
-            font-style: italic;
-            color: white;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-            margin: 0 20px 20px;
         }
         .features {
             display: flex;
@@ -119,7 +111,20 @@
             border: 1px solid #ddd;
             border-radius: 10px;
             background-color: rgba(255, 255, 255, 0.8);
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center horizontally */
+            text-align: center; /* Center text */
+        }
+        .tooltip {
+            width: 100%;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 14px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            margin-top: 10px;
         }
         .spaces {
             display: flex;
@@ -203,8 +208,14 @@
             .feature-box {
                 text-align: center;
             }
-            #services p.summary {
-                font-size: 14px;
+            .feature-box .tooltip {
+                box-shadow: none;
+                border: none;
+                padding: 5px 0;
+                font-size: 12px;
+            }
+            #services p {
+                font-size: 14px; /* Ensure summary is readable on mobile */
                 margin: 0 10px 20px;
             }
         }
@@ -234,9 +245,18 @@
     <div class="section" id="why-alabang">
         <h2>Why Alabang?</h2>
         <div class="features">
-            <div class="feature-box">A Strategic Location for Growth</div>
-            <div class="feature-box">A Thriving Business Ecosystem</div>
-            <div class="feature-box">Quality of Life Meets Professional Appeal</div>
+            <div class="feature-box">
+                A Strategic Location for Growth
+                <div class="tooltip">Alabang is a gem for any business looking to grow. Tucked in southern Metro Manila, it’s got easy access to highways like SLEX and is close to the airport—perfect for connecting with clients. Plus, its residential vibe means shorter commutes for your team. It’s a friendly, strategic spot that blends convenience with opportunity.</div>
+            </div>
+            <div class="feature-box">
+                A Thriving Business Ecosystem
+                <div class="tooltip">Alabang stands out with its vibrant mix of modern offices like Filinvest City and Northgate Cyberzone, green spaces, and lifestyle spots. It’s a hub that attracts tech startups, large corporations, and creative teams, providing excellent networking and talent opportunities. The nearby Westgate Center and Alabang Town Center offer cozy cafés and upscale dining options for brainstorming sessions or client meetings. It’s a lively setting that boosts both work and enjoyment.</div>
+            </div>
+            <div class="feature-box">
+                Quality of Life Meets Professional Appeal
+                <div class="tooltip">Alabang offers a refreshing mix of work and relaxation. It’s calmer than central Manila, with green spaces and parks like River Park to unwind. Your team can enjoy a quick break or weekend outings at local malls, keeping spirits high. The office options here are impressive yet budget-friendly—a great pick for anyone aiming to settle in comfortably.</div>
+            </div>
         </div>
     </div>
 
@@ -266,23 +286,23 @@
 
     <div class="section" id="services">
         <h2>Our Services</h2>
-        <p class="summary">At Office Spaces Alabang, we specialize in helping businesses find the ideal workspace in the heart of the South. Whether you’re a startup, a growing team, or a large company, we offer personalized services to make office leasing easy, efficient, and stress-free.</p>
+        <p>At Office Spaces Alabang, we specialize in helping businesses find the ideal workspace in the heart of the South. Whether you’re a startup, a growing team, or a large company, we offer personalized services to make office leasing easy, efficient, and stress-free.</p>
         <div class="features">
             <div class="feature-box">
                 Office Matching
-                <p>We listen to your needs and match you with the best available office spaces in Alabang — from PEZA-accredited buildings to premium-grade towers. We consider your size, budget, preferences, and timeline to present options that fit your business perfectly.</p>
+                <div class="tooltip">We listen to your needs and match you with the best available office spaces in Alabang — from PEZA-accredited buildings to premium-grade towers. We consider your size, budget, preferences, and timeline to present options that fit your business perfectly.</div>
             </div>
             <div class="feature-box">
                 Leasing Consultation
-                <p>Not sure where to start? We provide expert advice on lease terms, budgeting, timelines, and how to get the best deal for your business. Whether you're new to leasing or looking to relocate, we guide you every step of the way.</p>
+                <div class="tooltip">Not sure where to start? We provide expert advice on lease terms, budgeting, timelines, and how to get the best deal for your business. Whether you're new to leasing or looking to relocate, we guide you every step of the way.</div>
             </div>
             <div class="feature-box">
                 Site Visits
-                <p>Get a feel for the space. We’ll schedule and accompany you on site viewings so you can experience the offices firsthand. We help you ask the right questions, evaluate the space, and make informed decisions.</p>
+                <div class="tooltip">Get a feel for the space. We’ll schedule and accompany you on site viewings so you can experience the offices firsthand. We help you ask the right questions, evaluate the space, and make informed decisions.</div>
             </div>
             <div class="feature-box">
                 Lease Your Space in Alabang
-                <p>Do you have office space for lease? We work with property owners and landlords to connect them with serious and qualified tenants. Let us help you market your space effectively and find the right match, fast.</p>
+                <div class="tooltip">Do you have office space for lease? We work with property owners and landlords to connect them with serious and qualified tenants. Let us help you market your space effectively and find the right match, fast.</div>
             </div>
         </div>
     </div>
