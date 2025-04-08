@@ -60,13 +60,15 @@
         .hero h1 {
             font-size: 40px;
             font-weight: bold;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* 50% transparent black shadow */
         }
         .hero p {
             font-size: 20px;
             margin: 10px 0 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* 50% transparent black shadow */
         }
         .hero .cta-button {
-            background-color: black;
+            background-color: rgba(0, 0, 0, 0.5); /* 50% transparent black */
             color: white;
             padding: 12px 24px;
             border: none;
@@ -108,18 +110,9 @@
             padding: 20px;
             border: 1px solid #ddd;
             border-radius: 10px;
-            position: relative;
             background-color: rgba(255, 255, 255, 0.8);
         }
-        .feature-box:hover .tooltip {
-            display: block;
-            transform: translateY(0); /* Slide down to visible position */
-        }
         .tooltip {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
             width: 100%;
             background-color: white;
             border: 1px solid #ccc;
@@ -128,9 +121,6 @@
             font-size: 14px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.15);
             margin-top: 10px;
-            z-index: 10;
-            transform: translateY(-20px); /* Start above, off-screen */
-            transition: transform 0.3s ease-out; /* Animation for sliding */
         }
         .spaces {
             display: flex;
@@ -197,10 +187,9 @@
             .nav a {
                 margin: 5px 0;
             }
-            /* Keep separators on mobile */
             .nav a:not(:last-child)::after {
                 content: '|';
-                right: -10px; /* Adjusted for mobile spacing */
+                right: -10px;
             }
             .space-card {
                 width: 100%;
@@ -212,16 +201,11 @@
             .hero p {
                 font-size: 16px;
             }
-            /* Tooltips always visible on mobile, no animation */
             .feature-box .tooltip {
-                display: block;
-                position: static;
                 box-shadow: none;
                 border: none;
                 padding: 5px 0;
                 font-size: 12px;
-                transform: none; /* No animation on mobile */
-                transition: none;
             }
         }
     </style>
@@ -289,13 +273,26 @@
         </div>
     </div>
 
-    <rikesdiv class="section" id="services">
+    <div class="section" id="services">
         <h2>Our Services</h2>
+        <p>At Office Spaces Alabang, we specialize in helping businesses find the ideal workspace in the heart of the South. Whether you’re a startup, a growing team, or a large company, we offer personalized services to make office leasing easy, efficient, and stress-free.</p>
         <div class="features">
-            <div class="feature-box">Office Matching</div>
-            <div class="feature-box">Leasing Consultation</div>
-            <div class="feature-box">Site Visits</div>
-            <div class="feature-box">Lease your space in Alabang</div>
+            <div class="feature-box">
+                Office Matching
+                <div class="tooltip">We listen to your needs and match you with the best available office spaces in Alabang — from PEZA-accredited buildings to premium-grade towers. We consider your size, budget, preferences, and timeline to present options that fit your business perfectly.</div>
+            </div>
+            <div class="feature-box">
+                Leasing Consultation
+                <div class="tooltip">Not sure where to start? We provide expert advice on lease terms, budgeting, timelines, and how to get the best deal for your business. Whether you're new to leasing or looking to relocate, we guide you every step of the way.</div>
+            </div>
+            <div class="feature-box">
+                Site Visits
+                <div class="tooltip">Get a feel for the space. We’ll schedule and accompany you on site viewings so you can experience the offices firsthand. We help you ask the right questions, evaluate the space, and make informed decisions.</div>
+            </div>
+            <div class="feature-box">
+                Lease Your Space in Alabang
+                <div class="tooltip">Do you have office space for lease? We work with property owners and landlords to connect them with serious and qualified tenants. Let us help you market your space effectively and find the right match, fast.</div>
+            </div>
         </div>
     </div>
 
@@ -307,7 +304,8 @@
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea rows="5" name="message" placeholder="Your Message" required></textarea>
             <button type="submit">Send Message</button>
-            <p>Or <a href="https://wa.me/+639958128108">contact Jayjay via WhatsApp</a></p>
+            <p>Or contact Jayjay via: <a href="https://wa.me/+639958128108">WhatsApp</a> | <a href="viber://chat?number=+639958128108">Viber</a></p>
+            <p>Follow us: <a href="https://web.facebook.com/alabangoffice/">Facebook</a> | <a href="https://www.instagram.com/office.spaces.alabang/">Instagram</a></p>
         </form>
     </div>
 
