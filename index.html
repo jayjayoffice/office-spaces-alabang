@@ -98,6 +98,18 @@
         .section h2 {
             font-size: 28px;
             margin-bottom: 20px;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        #services p.summary {
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            margin: 0 20px 20px;
+        }
+        #contact p.intro {
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
         }
         .features {
             display: flex;
@@ -214,7 +226,11 @@
                 padding: 5px 0;
                 font-size: 12px;
             }
-            #services p {
+            #services p.summary {
+                font-size: 14px;
+                margin: 0 10px 20px;
+            }
+            #contact p.intro {
                 font-size: 14px;
                 margin: 0 10px 20px;
             }
@@ -286,7 +302,7 @@
 
     <div class="section" id="services">
         <h2>Our Services</h2>
-        <p>At Office Spaces Alabang, we specialize in helping businesses find the ideal workspace in the heart of the South. Whether you’re a startup, a growing team, or a large company, we offer personalized services to make office leasing easy, efficient, and stress-free.</p>
+        <p class="summary">At Office Spaces Alabang, we specialize in helping businesses find the ideal workspace in the heart of the South. Whether you’re a startup, a growing team, or a large company, we offer personalized services to make office leasing easy, efficient, and stress-free.</p>
         <div class="features">
             <div class="feature-box">
                 Office Matching
@@ -309,7 +325,7 @@
 
     <div class="section" id="contact">
         <h2>Let’s Talk</h2>
-        <p>Tell Us Your Requirements. Let's talk.</p>
+        <p class="intro">Tell Us Your Requirements. Let's talk.</p>
         <form action="mailto:jayjay.officespace@gmail.com" method="POST" enctype="text/plain" class="contact-form">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
