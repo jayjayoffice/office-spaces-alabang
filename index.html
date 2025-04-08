@@ -60,15 +60,15 @@
         .hero h1 {
             font-size: 40px;
             font-weight: bold;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* 50% transparent black shadow */
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
         .hero p {
             font-size: 20px;
             margin: 10px 0 20px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* 50% transparent black shadow */
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
         .hero .cta-button {
-            background-color: rgba(0, 0, 0, 0.5); /* 50% transparent black */
+            background-color: rgba(0, 0, 0, 0.5);
             color: white;
             padding: 12px 24px;
             border: none;
@@ -111,6 +111,10 @@
             border: 1px solid #ddd;
             border-radius: 10px;
             background-color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center horizontally */
+            text-align: center; /* Center text */
         }
         .tooltip {
             width: 100%;
@@ -201,11 +205,18 @@
             .hero p {
                 font-size: 16px;
             }
+            .feature-box {
+                text-align: center;
+            }
             .feature-box .tooltip {
                 box-shadow: none;
                 border: none;
                 padding: 5px 0;
                 font-size: 12px;
+            }
+            #services p {
+                font-size: 14px; /* Ensure summary is readable on mobile */
+                margin: 0 10px 20px;
             }
         }
     </style>
