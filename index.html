@@ -1,52 +1,218 @@
-<div class="section" id="spaces">
-    <h2>Available Spaces</h2>
-    <p>Explore featured office spaces in Alabang’s top business hubs.</p>
+For your reference, below is the code that i am using now: 
 
-    <h3>Filinvest Corporate City</h3>
-    <div class="spaces">
-        <div class="space-card">
-            <h3>Asian Star Building</h3>
-            <p>Size: 100–300 sqm</p>
-            <p>Price: PHP 850/sqm</p>
-            <button>Contact for Details</button>
-        </div>
-        <div class="space-card">
-            <h3>The Levels Corporate Plaza</h3>
-            <p>Size: 150–500 sqm</p>
-            <p>Price: PHP 950/sqm</p>
-            <button>Contact for Details</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Office Spaces Alabang</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        .header {
+            background-color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .header img {
+            height: 40px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            margin: 0 12px;
+        }
+        .hero {
+            background: url('hero-image.png') center/cover no-repeat;
+            height: 500px;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        .hero h1 {
+            font-size: 40px;
+            font-weight: bold;
+        }
+        .hero p {
+            font-size: 20px;
+            margin: 10px 0 20px;
+        }
+        .hero .cta-button {
+            background-color: black;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .section {
+            padding: 50px 20px;
+            background-color: white;
+            text-align: center;
+        }
+        .section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .feature-box {
+            flex: 1 1 200px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+        .spaces {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .space-card {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: left;
+        }
+        .space-card h3 {
+            margin: 0;
+        }
+        .space-card button {
+            margin-top: 10px;
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        footer {
+            background-color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="logo001.png" alt="Office Spaces Alabang">
+        <div class="nav">
+            <a href="#home">Home</a>
+            <a href="#why-alabang">Why Alabang?</a>
+            <a href="#spaces">Available Spaces</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
         </div>
     </div>
 
-    <h3>Northgate Cyberzone</h3>
-    <div class="spaces">
-        <div class="space-card">
-            <h3>Vector One</h3>
-            <p>Size: 120–400 sqm</p>
-            <p>Price: PHP 880/sqm</p>
-            <button>Contact for Details</button>
-        </div>
-        <div class="space-card">
-            <h3>Plaz@ B</h3>
-            <p>Size: 200–600 sqm</p>
-            <p>Price: PHP 920/sqm</p>
-            <button>Contact for Details</button>
+    <div class="hero" id="home">
+        <h1>Find the Best Offices in Alabang</h1>
+        <p>We help businesses find the Best Office in the heart of Muntinlupa’s business district.</p>
+        <button class="cta-button">Ask what's your requirement</button>
+    </div>
+
+    <div class="section" id="why-alabang">
+        <h2>Why Alabang?</h2>
+        <div class="features">
+            <div class="feature-box">Strategic location between Makati and Laguna</div>
+            <div class="feature-box">Proximity to SLEX and Skyway</div>
+            <div class="feature-box">IT and PEZA-accredited buildings</div>
+            <div class="feature-box">Green spaces & modern infrastructure</div>
         </div>
     </div>
 
-    <h3>Madrigal Business Park</h3>
-    <div class="spaces">
-        <div class="space-card">
-            <h3>Alabang Business Tower</h3>
-            <p>Size: 100–250 sqm</p>
-            <p>Price: PHP 800/sqm</p>
-            <button>Contact for Details</button>
-        </div>
-        <div class="space-card">
-            <h3>Madrigal Corporate Center</h3>
-            <p>Size: 180–450 sqm</p>
-            <p>Price: PHP 870/sqm</p>
-            <button>Contact for Details</button>
+    <div class="section" id="spaces">
+        <h2>Available Spaces</h2>
+        <div class="spaces">
+            <div class="space-card">
+                <h3>Filinvest One</h3>
+                <p>Size: 100–500 sqm</p>
+                <p>Price: PHP xxxxx/sqm</p>
+                <button>View Details</button>
+            </div>
+            <div class="space-card">
+                <h3>Asian Star Building</h3>
+                <p>Size: 150–400 sqm</p>
+                <p>Price: PHP xxxxx/sqm</p>
+                <button>View Details</button>
+            </div>
+            <div class="space-card">
+                <h3>Vector One</h3>
+                <p>Size: 120–300 sqm</p>
+                <p>Price: PHP xxxxx/sqm</p>
+                <button>View Details</button>
+            </div>
         </div>
     </div>
-</div>
+
+    <div class="section" id="services">
+        <h2>Our Services</h2>
+        <div class="features">
+            <div class="feature-box">Office Matching</div>
+            <div class="feature-box">Leasing Consultation</div>
+            <div class="feature-box">Site Visits</div>
+            <div class="feature-box">Lease your space in Alabang</div>
+        </div>
+    </div>
+
+    <div class="section" id="contact">
+        <h2>Let’s Talk</h2>
+        <p>Looking for an office space tailored to your needs? Let’s talk.</p>
+        <div class="contact-form">
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <textarea rows="5" placeholder="Your Message"></textarea>
+            <button>Send Message</button>
+            <p>Or <a href="https://wa.me/your-number">contact Jayjay via WhatsApp</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>About | Contact Info | Social Media: @officespacesalabang</p>
+        <p>Disclaimer: All information on this website is for general informational purposes only and may be subject to change.</p>
+    </footer>
+</body>
+</html>
