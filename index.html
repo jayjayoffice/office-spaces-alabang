@@ -84,9 +84,9 @@
             background-position: center;
         }
         #why-alabang.section {
-            padding: 20px; /* Reduced padding for layout */
+            padding: 20px;
             position: relative;
-            height: 400px; /* Fixed height for slideshow */
+            height: 400px;
         }
         #spaces.section {
             background-image: url('available-spaces.png');
@@ -103,9 +103,8 @@
             color: white;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
             position: relative;
-            z-index: 10; /* Ensure title stays in foreground */
+            z-index: 10;
         }
-        /* Slideshow Styles */
         .slideshow {
             width: 100%;
             height: 100%;
@@ -116,12 +115,12 @@
         }
         .slides-container {
             display: flex;
-            width: 300%; /* 3 slides */
+            width: 300%;
             height: 100%;
-            transition: transform 0.5s ease-in-out; /* Slide animation */
+            transition: transform 0.5s ease-in-out;
         }
         .slide {
-            width: 33.33%; /* Each slide takes 1/3 of container */
+            width: 33.33%;
             height: 100%;
             background-size: cover;
             background-position: center;
@@ -150,7 +149,7 @@
             transform: translateX(-50%);
             display: flex;
             gap: 10px;
-            z-index: 10; /* Ensure buttons stay in foreground */
+            z-index: 10;
         }
         .slideshow-buttons button {
             width: 12px;
@@ -216,6 +215,11 @@
         }
         .space-card h3 {
             margin: 0;
+            font-size: 20px;
+        }
+        .space-card p {
+            margin: 10px 0;
+            font-size: 16px;
         }
         .space-card button {
             margin-top: 10px;
@@ -359,22 +363,19 @@
         <h2>Available Spaces</h2>
         <div class="spaces">
             <div class="space-card">
-                <h3>Filinvest One</h3>
-                <p>Size: 100–500 sqm</p>
-                <p>Price: PHP xxxxx/sqm</p>
-                <button>View Details</button>
+                <h3>Filinvest Corporate City</h3>
+                <p>Premium office spaces in Alabang’s master-planned business district, offering modern facilities and excellent connectivity.</p>
+                <button onclick="window.location.href='#contact'">Inquire Now</button>
             </div>
             <div class="space-card">
-                <h3>Asian Star Building</h3>
-                <p>Size: 150–400 sqm</p>
-                <p>Price: PHP xxxxx/sqm</p>
-                <button>View Details</button>
+                <h3>Northgate Cyberzone</h3>
+                <p>PEZA-accredited IT park with state-of-the-art office spaces, ideal for BPOs and tech-driven businesses.</p>
+                <button onclick="window.location.href='#contact'">Inquire Now</button>
             </div>
             <div class="space-card">
-                <h3>Vector One</h3>
-                <p>Size: 120–300 sqm</p>
-                <p>Price: PHP xxxxx/sqm</p>
-                <button>View Details</button>
+                <h3>Madrigal Business Park</h3>
+                <p>Strategic office locations with flexible layouts, perfect for startups and established companies alike.</p>
+                <button onclick="window.location.href='#contact'">Inquire Now</button>
             </div>
         </div>
     </div>
