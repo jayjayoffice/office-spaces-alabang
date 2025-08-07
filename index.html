@@ -39,6 +39,7 @@
             font-size: 16px;
             margin: 0 12px;
             position: relative;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fixed typo */
         }
         .nav a:not(:last-child)::after {
             content: '|';
@@ -200,7 +201,7 @@
         #spaces .space-slide h3 {
             font-size: 24px;
             color: white;
-            background-color: rgba(0, 0, 0, 0.4); /* Changed to 40% opacity */
+            background-color: rgba(0, 0, 0, 0.4);
             padding: 10px;
             border-radius: 5px;
             margin: 0 20px;
@@ -208,14 +209,14 @@
         #spaces .space-slide p {
             font-size: 16px;
             color: white;
-            background-color: rgba(0, 0, 0, 0.4); /* Changed to 40% opacity */
+            background-color: rgba(0, 0, 0, 0.4);
             padding: 10px;
             border-radius: 5px;
             margin: 10px 20px;
             max-width: 600px;
         }
         #spaces .space-slide button {
-            background-color: rgba(0, 0, 0, 0.6); /* Maintained 60% opacity */
+            background-color: rgba(0, 0, 0, 0.6);
             color: white;
             border: none;
             padding: 10px 15px;
@@ -224,10 +225,12 @@
             margin-top: 10px;
         }
         #spaces .slideshow-buttons button {
-            background-color: rgba(0, 0, 0, 0.5); /* Changed to black, 50% opacity */
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 16px; /* Increased for visibility */
+            height: 16px; /* Increased for visibility */
         }
         #spaces .slideshow-buttons button.active {
-            background-color: rgba(0, 0, 0, 1); /* Solid black for active */
+            background-color: rgba(0, 0, 0, 1);
         }
         #services p.summary {
             color: white;
@@ -322,7 +325,7 @@
                 font-size: 18px;
             }
             .slide p, #spaces .space-slide p {
-                font-size: 12px;
+                font-size: 14px; /* Increased for readability */
                 margin: 5px 10px;
             }
             .feature-box {
@@ -519,5 +522,3 @@
     </script>
 </body>
 </html>
-
-
