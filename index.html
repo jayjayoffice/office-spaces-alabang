@@ -36,7 +36,6 @@
         .nav a {
             text-decoration: none;
             color: #333;
-            font Hannah
             font-size: 16px;
             margin: 0 12px;
             position: relative;
@@ -201,7 +200,7 @@
         #spaces .space-slide h3 {
             font-size: 24px;
             color: white;
-            background-color: rgba(0, 0, 0, 0.25);
+            background-color: rgba(0, 0, 0, 0.4); /* Changed to 40% opacity */
             padding: 10px;
             border-radius: 5px;
             margin: 0 20px;
@@ -209,20 +208,26 @@
         #spaces .space-slide p {
             font-size: 16px;
             color: white;
-            background-color: rgba(0, 0, 0, 0.25);
+            background-color: rgba(0, 0, 0, 0.4); /* Changed to 40% opacity */
             padding: 10px;
             border-radius: 5px;
             margin: 10px 20px;
             max-width: 600px;
         }
         #spaces .space-slide button {
-            background-color: rgba(0, 0, 0, 0.6);
+            background-color: rgba(0, 0, 0, 0.6); /* Maintained 60% opacity */
             color: white;
             border: none;
             padding: 10px 15px;
             border-radius: 5px;
             cursor: pointer;
             margin-top: 10px;
+        }
+        #spaces .slideshow-buttons button {
+            background-color: rgba(0, 0, 0, 0.5); /* Changed to black, 50% opacity */
+        }
+        #spaces .slideshow-buttons button.active {
+            background-color: rgba(0, 0, 0, 1); /* Solid black for active */
         }
         #services p.summary {
             color: white;
