@@ -36,6 +36,7 @@
         .nav a {
             text-decoration: none;
             color: #333;
+            font Hannah
             font-size: 16px;
             margin: 0 12px;
             position: relative;
@@ -447,3 +448,69 @@
             <p>Or contact Jayjay via: <a href="https://wa.me/+639958128108">WhatsApp</a> | <a href="viber://chat?number=+639958128108">Viber</a></p>
             <p>Follow us: <a href="https://web.facebook.com/alabangoffice/">Facebook</a> | <a href="https://www.instagram.com/office.spaces.alabang/">Instagram</a></p>
         </form>
+    </div>
+
+    <footer>
+        <p>About | Contact Info | Social Media: @officespacesalabang</p>
+        <p>Disclaimer: All information on this website is for general informational purposes only and may be subject to change.</p>
+    </footer>
+
+    <script>
+        // Why Alabang Slideshow
+        let currentWhyAlabangSlide = 0;
+        const whyAlabangContainer = document.querySelector('#why-alabang .slides-container');
+        const whyAlabangButtons = document.querySelectorAll('#why-alabang .slideshow-buttons button');
+        const totalWhyAlabangSlides = 3;
+
+        function showWhyAlabangSlide(index) {
+            whyAlabangContainer.style.transform = `translateX(-${index * 33.33}%)`;
+            whyAlabangButtons.forEach((button, i) => {
+                button.classList.toggle('active', i === index);
+            });
+            currentWhyAlabangSlide = index;
+        }
+
+        // Initial slide
+        showWhyAlabangSlide(0);
+
+        // Auto-slide every 7 seconds
+        setInterval(() => {
+            currentWhyAlabangSlide = (currentWhyAlabangSlide + 1) % totalWhyAlabangSlides;
+            showWhyAlabangSlide(currentWhyAlabangSlide);
+        }, 7000);
+
+        // Manual slide control
+        whyAlabangButtons.forEach((button, index) => {
+            button.addEventListener('click', () => showWhyAlabangSlide(index));
+        });
+
+        // Available Spaces Slideshow
+        let currentSpaceSlide = 0;
+        const spacesContainer = document.querySelector('#spaces .spaces-container');
+        const spaceButtons = document.querySelectorAll('#spaces .slideshow-buttons button');
+        const totalSpaceSlides = 3;
+
+        function showSpaceSlide(index) {
+            spacesContainer.style.transform = `translateY(-${index * 33.33}%)`;
+            spaceButtons.forEach((button, i) => {
+                button.classList.toggle('active', i === index);
+            });
+            currentSpaceSlide = index;
+        }
+
+        // Initial slide
+        showSpaceSlide(0);
+
+        // Auto-slide every 7 seconds
+        setInterval(() => {
+            currentSpaceSlide = (currentSpaceSlide + 1) % totalSpaceSlides;
+            showSpaceSlide(currentSpaceSlide);
+        }, 7000);
+
+        // Manual slide control
+        spaceButtons.forEach((button, index) => {
+            button.addEventListener('click', () => showSpaceSlide(index));
+        });
+    </script>
+</body>
+</html>
