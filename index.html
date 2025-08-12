@@ -1,128 +1,569 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alabang Office Spaces</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-    }
-    section {
-      padding: 40px 20px;
-      text-align: center;
-    }
-    h1, h2 {
-      margin-bottom: 20px;
-    }
-    /* Available Spaces Fix */
-    #available-spaces {
-      position: relative;
-      overflow: hidden;
-    }
-    #available-spaces .spaces-content {
-      transform: translateY(100%);
-      animation: slideUpSpaces 1s ease-out forwards;
-      animation-delay: 0.5s; /* smooth entry */
-    }
-    @keyframes slideUpSpaces {
-      from { transform: translateY(100%); }
-      to { transform: translateY(0); }
-    }
-    /* Contact Form */
-    form {
-      max-width: 500px;
-      margin: 0 auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    form input, form textarea, form button {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-    }
-    form button {
-      background: #0077cc;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-    }
-    form button:hover {
-      background: #005fa3;
-    }
-    .success-message, .error-message {
-      display: none;
-      margin-top: 10px;
-      font-size: 0.9rem;
-    }
-    .success-message { color: green; }
-    .error-message { color: red; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Office Spaces Alabang</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        .header {
+            background-color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .header img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        .header span {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            margin: 0 12px;
+            position: relative;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .nav a:not(:last-child)::after {
+            content: '|';
+            position: absolute;
+            right: -14px;
+            color: #333;
+        }
+        .hero {
+            background: url('hero-image.png') center/cover no-repeat;
+            height: 500px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        .hero h1 {
+            font-size: 40px;
+            font-weight: bold;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .hero p {
+            font-size: 20px;
+            margin: 10px 0 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .hero .cta-button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .section {
+            padding: 50px 20px;
+            background-color: #d3d3d3;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+        }
+        /* keep the same selectors you used */
+        #why-alabang.section {
+            padding: 20px;
+            position: relative;
+            height: 600px;
+        }
+        #spaces.section {
+            padding: 20px;
+            position: relative;
+            height: 600px;
+        }
+        #services.section {
+            background-image: url('our-services.png');
+        }
+        #contact.section {
+            background-image: url('contact.png');
+        }
+        .section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Why Alabang Slideshow (unchanged) */
+        .slideshow {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+        }
+        .slides-container {
+            display: flex;
+            width: 300%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slide {
+            width: 33.33%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .slide h3 {
+            font-size: 24px;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            margin: 0 20px;
+            background-color: rgba(0, 0, 0, 0.15);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .slide p {
+            font-size: 16px;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            margin: 10px 20px;
+            max-width: 600px;
+            background-color: rgba(0, 0, 0, 0.15);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .slideshow-buttons {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+        .slideshow-buttons button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+        }
+        .slideshow-buttons button.active {
+            background-color: white;
+        }
+
+        /* Spaces Slideshow — MINIMAL & SAFE FIX
+           changed from absolute -> relative so the slideshow stays constrained within the section
+           and won't visually "float" over the rest of the page while translating.
+        */
+        #spaces .spaces-slideshow {
+            width: 100%;
+            height: 100%;
+            position: relative; /* <-- changed from absolute to relative (fix) */
+            top: 0;
+            left: 0;
+            overflow: hidden;
+        }
+        #spaces .spaces-container {
+            display: flex;
+            flex-direction: column;
+            height: 300%;
+            width: 100%;
+            transition: transform 0.5s ease-in-out;
+            will-change: transform; /* improves animation stability */
+        }
+        #spaces .space-slide {
+            width: 100%;
+            height: 33.33%;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #spaces .space-slide h3 {
+            font-size: 24px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 10px;
+            border-radius: 5px;
+            margin: 0 20px;
+        }
+        #spaces .space-slide p {
+            font-size: 16px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 20px;
+            max-width: 600px;
+        }
+        #spaces .space-slide button {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        #spaces .slideshow-buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 16px; /* Increased for visibility */
+            height: 16px; /* Increased for visibility */
+        }
+        #spaces .slideshow-buttons button.active {
+            background-color: rgba(0, 0, 0, 1);
+        }
+
+        #services p.summary {
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            margin: 0 20px 20px;
+        }
+        #contact p.intro {
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .feature-box {
+            flex: 1 1 200px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .tooltip {
+            width: 100%;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 14px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            margin-top: 10px;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: rgba(255,255,255,0.9);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        footer {
+            background-color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+        }
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 10px;
+            }
+            .nav a {
+                margin: 5px 0;
+            }
+            .nav a:not(:last-child)::after {
+                content: '|';
+                right: -10px;
+            }
+            .hero h1 {
+                font-size: 28px;
+            }
+            .hero p {
+                font-size: 16px;
+            }
+            #why-alabang.section, #spaces.section {
+                height: 300px;
+            }
+            .slide h3, #spaces .space-slide h3 {
+                font-size: 18px;
+            }
+            .slide p, #spaces .space-slide p {
+                font-size: 14px; /* Increased for readability */
+                margin: 5px 10px;
+            }
+            .feature-box {
+                text-align: center;
+            }
+            .feature-box .tooltip {
+                box-shadow: none;
+                border: none;
+                padding: 5px 0;
+                font-size: 12px;
+            }
+            #services p.summary {
+                font-size: 14px;
+                margin: 0 10px 20px;
+            }
+            #contact p.intro {
+                font-size: 14px;
+                margin: 0 10px 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-
-  <section id="hero">
-    <h1>Find the best office spaces in Alabang with personalized leasing services.</h1>
-  </section>
-
-  <section id="why-alabang">
-    <h2>Why Alabang?</h2>
-    <p>Strategic location, vibrant community, and excellent accessibility.</p>
-  </section>
-
-  <section id="available-spaces">
-    <div class="spaces-content">
-      <h2>Available Spaces</h2>
-      <p>Explore our list of premium office spaces ready for leasing.</p>
+    <div class="header">
+        <div style="display: flex; align-items: center;">
+            <img src="logo001.png" alt="Office Spaces Alabang">
+            <span>Alabang Offices</span>
+        </div>
+        <nav class="nav">
+            <a href="#home">Home</a>
+            <a href="#why-alabang">Why Alabang?</a>
+            <a href="#spaces">Available Spaces</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </div>
-  </section>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <form id="contact-form" action="https://formspree.io/f/yourFormID" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
-      <div class="success-message">Thank you! Your message has been sent.</div>
-      <div class="error-message">Oops! Something went wrong, please try again.</div>
-    </form>
-  </section>
+    <div class="hero" id="home">
+        <h1>Find the Best Offices in Alabang</h1>
+        <p>We help businesses find the Best Office in the heart of Muntinlupa’s business district.</p>
+        <button class="cta-button" onclick="window.location.href='#contact'">Tell Us Your Requirements</button>
+    </div>
 
-  <script>
-    document.getElementById('contact-form').addEventListener('submit', async function(event) {
-      event.preventDefault();
-      const form = event.target;
-      const data = new FormData(form);
-      const action = form.action;
+    <div class="section" id="why-alabang">
+        <h2>Why Alabang?</h2>
+        <div class="slideshow" id="why-alabang-slideshow">
+            <div class="slides-container">
+                <div class="slide" style="background-image: url('why-alabang.png');">
+                    <h3>A Strategic Location for Growth</h3>
+                    <p>Alabang is a gem for any business looking to grow. Tucked in southern Metro Manila, it’s got easy access to highways like SLEX and is close to the airport—perfect for connecting with clients. Plus, its residential vibe means shorter commutes for your team. It’s a friendly, strategic spot that blends convenience with opportunity.</p>
+                </div>
+                <div class="slide" style="background-image: url('why-alabang2.png');">
+                    <h3>A Thriving Business Ecosystem</h3>
+                    <p>Alabang stands out with its vibrant mix of modern offices like Filinvest City and Northgate Cyberzone, green spaces, and lifestyle spots. It’s a hub that attracts tech startups, large corporations, and creative teams, providing excellent networking and talent opportunities. The nearby Westgate Center and Alabang Town Center offer cozy cafés and upscale dining options for brainstorming sessions or client meetings. It’s a lively setting that boosts both work and enjoyment.</p>
+                </div>
+                <div class="slide" style="background-image: url('why-alabang3.png');">
+                    <h3>Quality of Life Meets Professional Appeal</h3>
+                    <p>Alabang offers a refreshing mix of work and relaxation. It’s calmer than central Manila, with green spaces and parks like River Park to unwind. Your team can enjoy a quick break or weekend outings at local malls, keeping spirits high. The office options here are impressive yet budget-friendly—a great pick for anyone aiming to settle in comfortably.</p>
+                </div>
+            </div>
+            <div class="slideshow-buttons">
+                <button onclick="showWhyAlabangSlide(0)"></button>
+                <button onclick="showWhyAlabangSlide(1)"></button>
+                <button onclick="showWhyAlabangSlide(2)"></button>
+            </div>
+        </div>
+    </div>
 
-      try {
-        const response = await fetch(action, {
-          method: form.method,
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        });
-        if (response.ok) {
-          form.querySelector('.success-message').style.display = 'block';
-          form.querySelector('.error-message').style.display = 'none';
-          form.reset();
-        } else {
-          throw new Error('Form submission failed');
+    <div class="section" id="spaces">
+        <h2>Available Spaces</h2>
+        <div class="spaces-slideshow" id="spaces-slideshow">
+            <div class="spaces-container">
+                <div class="space-slide" style="background-image: url('MapsFCT.png');">
+                    <h3>Spectrum at Filinvest Corporate City</h3>
+                    <p>At the heart of the city’s business landscape, the Spectrum District stands as its economic core. Surrounded by major roads—Corporate Avenue, Commerce Avenue, and Filinvest Avenue—it serves as the central office hub, home to top local and multinational companies. The district also features upscale residences, premier hotels, and vibrant commercial spaces that reflect the dynamic spirit of Filinvest City as a premier central business district.</p>
+                    <button onclick="window.location.href='#contact'">Inquire Now</button>
+                </div>
+                <div class="space-slide" style="background-image: url('MapsNOR.png');">
+                    <h3>Northgate Cyberzone</h3>
+                    <p>Northgate Cyberzone is an 18.7-hectare, PEZA-registered IT park located at the heart of Filinvest City. Dubbed the BPO and IT hub of the South, it offers a dynamic, campus-style environment tailored to the needs of tech-driven businesses. It’s home to a wide range of industries—including BPOs, KPOs, call centers, fintech, e-commerce, and creative tech such as software and multimedia design. With its strategic location, robust infrastructure, and 24/7 operations, Northgate Cyberzone continues to attract top-tier companies and talent from across the metro.</p>
+                    <button onclick="window.location.href='#contact'">Inquire Now</button>
+                </div>
+                <div class="space-slide" style="background-image: url('MapsMBS.png');">
+                    <h3>Madrigal Business Park</h3>
+                    <p>Madrigal Business Park is a master-planned commercial district in Alabang, Muntinlupa. Known for its wide roads, green open spaces, and low-density layout, it offers a calm yet connected business environment. Strategically located near major roads and lifestyle hubs like Alabang Town Center, it is highly accessible. Home to corporate offices, banks, and upscale retail, it blends business convenience with lifestyle appeal—making Madrigal Business Park a preferred address for companies seeking a premium location in the South.</p>
+                    <button onclick="window.location.href='#contact'">Inquire Now</button>
+                </div>
+            </div>
+            <div class="slideshow-buttons">
+                <button onclick="showSpaceSlide(0)"></button>
+                <button onclick="showSpaceSlide(1)"></button>
+                <button onclick="showSpaceSlide(2)"></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="services">
+        <h2>Our Services</h2>
+        <p class="summary">At Office Spaces Alabang, we specialize in helping businesses find the ideal workspace in the heart of the South. Whether you’re a startup, a growing team, or a large company, we offer personalized services to make office leasing easy, efficient, and stress-free.</p>
+        <div class="features">
+            <div class="feature-box">
+                Office Matching
+                <div class="tooltip">We listen to your needs and match you with the best available office spaces in Alabang — from PEZA-accredited buildings to premium-grade towers. We consider your size, budget, preferences, and timeline to present options that fit your business perfectly.</div>
+            </div>
+            <div class="feature-box">
+                Leasing Consultation
+                <div class="tooltip">Not sure where to start? We provide expert advice on lease terms, budgeting, timelines, and how to get the best deal for your business. Whether you're new to leasing or looking to relocate, we guide you every step of the way.</div>
+            </div>
+            <div class="feature-box">
+                Site Visits
+                <div class="tooltip">Get a feel for the space. We’ll schedule and accompany you on site viewings so you can experience the offices firsthand. We help you ask the right questions, evaluate the space, and make informed decisions.</div>
+            </div>
+            <div class="feature-box">
+                Lease Your Space in Alabang
+                <div class="tooltip">Do you have office space for lease? We work with property owners and landlords to connect them with serious and qualified tenants. Let us help you market your space effectively and find the right match, fast.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="contact">
+        <h2>Let’s Talk</h2>
+        <p class="intro">Tell Us Your Requirements. Let's talk.</p>
+        <!-- Formspree integration: replace `your-form-id` with your actual Formspree ID -->
+        <form action="https://formspree.io/f/your-form-id" method="POST" class="contact-form" id="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <!-- Formspree prefers _replyto for reply address -->
+            <input type="email" name="_replyto" placeholder="Your Email" required>
+            <textarea rows="5" name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+            <p id="form-status" style="margin-top:10px; font-size:14px;"></p>
+            <p>Or contact Jayjay via: <a href="https://wa.me/+639958128108">WhatsApp</a> | <a href="viber://chat?number=+639958128108">Viber</a></p>
+            <p>Follow us: <a href="https://web.facebook.com/alabangoffice/">Facebook</a> | <a href="https://www.instagram.com/office.spaces.alabang/">Instagram</a></p>
+        </form>
+    </div>
+
+    <footer>
+        <p>About | Contact Info | Social Media: @officespacesalabang</p>
+        <p>Disclaimer: All information on this website is for general informational purposes only and may be subject to change.</p>
+    </footer>
+
+    <script>
+        // Why Alabang Slideshow (unchanged timing)
+        let currentWhyAlabangSlide = 0;
+        const whyAlabangContainer = document.querySelector('#why-alabang .slides-container');
+        const whyAlabangButtons = document.querySelectorAll('#why-alabang .slideshow-buttons button');
+        const totalWhyAlabangSlides = 3;
+
+        function showWhyAlabangSlide(index) {
+            whyAlabangContainer.style.transform = `translateX(-${index * 33.33}%)`;
+            whyAlabangButtons.forEach((button, i) => {
+                button.classList.toggle('active', i === index);
+            });
+            currentWhyAlabangSlide = index;
         }
-      } catch (error) {
-        form.querySelector('.success-message').style.display = 'none';
-        form.querySelector('.error-message').style.display = 'block';
-      }
-    });
-  </script>
 
+        showWhyAlabangSlide(0);
+
+        setInterval(() => {
+            currentWhyAlabangSlide = (currentWhyAlabangSlide + 1) % totalWhyAlabangSlides;
+            showWhyAlabangSlide(currentWhyAlabangSlide);
+        }, 7000);
+
+        whyAlabangButtons.forEach((button, index) => {
+            button.addEventListener('click', () => showWhyAlabangSlide(index));
+        });
+
+        // Available Spaces Slideshow — CHANGED INTERVAL TO 9000 (9s)
+        let currentSpaceSlide = 0;
+        const spacesContainer = document.querySelector('#spaces .spaces-container');
+        const spaceButtons = document.querySelectorAll('#spaces .slideshow-buttons button');
+        const totalSpaceSlides = 3;
+
+        function showSpaceSlide(index) {
+            spacesContainer.style.transform = `translateY(-${index * 33.33}%)`;
+            spaceButtons.forEach((button, i) => {
+                button.classList.toggle('active', i === index);
+            });
+            currentSpaceSlide = index;
+        }
+
+        showSpaceSlide(0);
+
+        // 9 seconds for spaces as requested
+        setInterval(() => {
+            currentSpaceSlide = (currentSpaceSlide + 1) % totalSpaceSlides;
+            showSpaceSlide(currentSpaceSlide);
+        }, 9000);
+
+        spaceButtons.forEach((button, index) => {
+            button.addEventListener('click', () => showSpaceSlide(index));
+        });
+
+        // Formspree AJAX submit (works on GitHub Pages & custom domains)
+        (function() {
+            const form = document.getElementById('contact-form');
+            const status = document.getElementById('form-status');
+
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                status.textContent = 'Sending...';
+                status.style.color = '#333';
+
+                const data = new FormData(form);
+                try {
+                    const res = await fetch(form.action, {
+                        method: form.method,
+                        body: data,
+                        headers: { 'Accept': 'application/json' }
+                    });
+
+                    if (res.ok) {
+                        status.style.color = 'green';
+                        status.textContent = "Thanks — your message was sent.";
+                        form.reset();
+                    } else {
+                        const contentType = res.headers.get('Content-Type') || '';
+                        let errorMessage = 'Oops! There was a problem sending your message.';
+                        if (contentType.indexOf('application/json') !== -1) {
+                            const json = await res.json();
+                            if (json && json.error) errorMessage = json.error;
+                        }
+                        status.style.color = 'red';
+                        status.textContent = errorMessage;
+                    }
+                } catch (err) {
+                    status.style.color = 'red';
+                    status.textContent = 'Network error — please try again later.';
+                }
+            });
+        })();
+    </script>
 </body>
 </html>
