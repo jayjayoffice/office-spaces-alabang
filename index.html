@@ -3,114 +3,126 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Find the best office spaces in Alabang with personalized leasing services." />
-  <title>Office Spaces in Alabang</title>
+  <title>Alabang Office Spaces</title>
   <style>
-    /* Reset & Base Styles */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; line-height: 1.6; background: #fff; color: #333; }
-
-    header { text-align: center; padding: 2rem; background: #0b3d91; color: #fff; }
-    header h1 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
-    header p { font-size: clamp(1rem, 2.5vw, 1.2rem); margin-top: 0.5rem; }
-
-    /* Slideshow Container */
-    .slideshow { position: relative; max-width: 100%; overflow: hidden; }
-    .slide { display: none; width: 100%; height: auto; }
-    .slide img { width: 100%; height: auto; display: block; }
-
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    h1, h2 {
+      margin-bottom: 20px;
+    }
     /* Available Spaces Fix */
-    .available-spaces { position: relative; overflow: hidden; background: #f4f4f4; padding: 2rem; }
-    .available-spaces .content { transform: translateY(100%); animation: slideUp 1s ease-out forwards; }
-    @keyframes slideUp {
-      0% { transform: translateY(100%); }
-      100% { transform: translateY(0); }
+    #available-spaces {
+      position: relative;
+      overflow: hidden;
     }
-
+    #available-spaces .spaces-content {
+      transform: translateY(100%);
+      animation: slideUpSpaces 1s ease-out forwards;
+      animation-delay: 0.5s; /* smooth entry */
+    }
+    @keyframes slideUpSpaces {
+      from { transform: translateY(100%); }
+      to { transform: translateY(0); }
+    }
     /* Contact Form */
-    form { max-width: 600px; margin: 2rem auto; padding: 1rem; background: #fafafa; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
     form input, form textarea, form button {
-      width: 100%; padding: 0.75rem; margin: 0.5rem 0; border: 1px solid #ccc; border-radius: 5px;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
     }
-    form button { background: #0b3d91; color: #fff; border: none; cursor: pointer; }
-    form button:hover { background: #094080; }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      header { padding: 1.5rem; }
-      form { margin: 1rem; }
+    form button {
+      background: #0077cc;
+      color: #fff;
+      border: none;
+      cursor: pointer;
     }
+    form button:hover {
+      background: #005fa3;
+    }
+    .success-message, .error-message {
+      display: none;
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+    .success-message { color: green; }
+    .error-message { color: red; }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Office Spaces in Alabang</h1>
-  <p>Find the best office spaces in Alabang with personalized leasing services.</p>
-</header>
+  <section id="hero">
+    <h1>Find the best office spaces in Alabang with personalized leasing services.</h1>
+  </section>
 
-<!-- Slideshow -->
-<div class="slideshow">
-  <div class="slide"><img src="img/why-alabang.jpg" alt="Why Alabang" loading="lazy"></div>
-  <div class="slide available-spaces">
-    <div class="content">
+  <section id="why-alabang">
+    <h2>Why Alabang?</h2>
+    <p>Strategic location, vibrant community, and excellent accessibility.</p>
+  </section>
+
+  <section id="available-spaces">
+    <div class="spaces-content">
       <h2>Available Spaces</h2>
-      <p>We offer prime office spaces tailored to your needs.</p>
+      <p>Explore our list of premium office spaces ready for leasing.</p>
     </div>
-  </div>
-</div>
+  </section>
 
-<!-- Contact Form -->
-<section id="contact">
-  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-    <h2>Contact Us</h2>
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="_replyto" placeholder="Your Email" required />
-    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-    <button type="submit">Send Message</button>
-    <p id="form-status" style="text-align:center; font-size:0.9rem; margin-top:0.5rem;"></p>
-  </form>
-</section>
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form id="contact-form" action="https://formspree.io/f/yourFormID" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+      <div class="success-message">Thank you! Your message has been sent.</div>
+      <div class="error-message">Oops! Something went wrong, please try again.</div>
+    </form>
+  </section>
 
-<script>
-  // Simple Slideshow with custom timings
-  let slideIndex = 0;
-  const slides = document.getElementsByClassName("slide");
-  const slideTimings = [7000, 9000]; // ms per slide: Why Alabang (7s), Spaces (9s)
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', async function(event) {
+      event.preventDefault();
+      const form = event.target;
+      const data = new FormData(form);
+      const action = form.action;
 
-  function showSlides() {
-    for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
-    slides[slideIndex].style.display = "block";
-    let timing = slideTimings[slideIndex];
-    slideIndex = (slideIndex + 1) % slides.length;
-    setTimeout(showSlides, timing);
-  }
-  showSlides();
-
-  // Formspree AJAX Submission
-  const form = document.querySelector("form");
-  const status = document.getElementById("form-status");
-
-  form.addEventListener("submit", async function (event) {
-    event.preventDefault();
-    const data = new FormData(form);
-    try {
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: data,
-        headers: { Accept: "application/json" }
-      });
-      if (response.ok) {
-        status.textContent = "Thanks for your message! We'll get back to you soon.";
-        form.reset();
-      } else {
-        status.textContent = "Oops! There was a problem sending your message.";
+      try {
+        const response = await fetch(action, {
+          method: form.method,
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+          form.querySelector('.success-message').style.display = 'block';
+          form.querySelector('.error-message').style.display = 'none';
+          form.reset();
+        } else {
+          throw new Error('Form submission failed');
+        }
+      } catch (error) {
+        form.querySelector('.success-message').style.display = 'none';
+        form.querySelector('.error-message').style.display = 'block';
       }
-    } catch (error) {
-      status.textContent = "Oops! There was a problem sending your message.";
-    }
-  });
-</script>
+    });
+  </script>
 
 </body>
 </html>
