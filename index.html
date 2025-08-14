@@ -57,6 +57,7 @@
             align-items: center;
             text-align: center;
             padding: 20px;
+            border: 25px solid #F5F5F5;
         }
         .hero h1 {
             font-size: 40px;
@@ -83,11 +84,13 @@
             text-align: center;
             background-size: cover;
             background-position: center;
+            border: 25px solid #F5F5F5;
         }
         #why-alabang.section {
             padding: 20px;
             position: relative;
             height: 400px;
+            background-image: url('why-alabang2.jpg');
         }
         #spaces.section {
             padding: 20px;
@@ -95,7 +98,7 @@
             height: 400px;
         }
         #services.section {
-            background-image: url('our-services.png');
+            background-image: url('WebsiteBG.jpg');
         }
         #contact.section {
             background-image: url('WebsiteBG.jpg');
@@ -103,13 +106,18 @@
         .section h2 {
             font-size: 28px;
             margin-bottom: 20px;
-            color: white;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
             position: relative;
             z-index: 10;
         }
-        /* Slideshow Styles (Why Alabang) */
-        .slideshow {
+        #why-alabang h2, #spaces h2 {
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        #services h2, #contact h2 {
+            color: black;
+        }
+        /* Why Alabang Text Slideshow */
+        .text-slideshow {
             width: 100%;
             height: 100%;
             position: absolute;
@@ -117,23 +125,20 @@
             left: 0;
             overflow: hidden;
         }
-        .slides-container {
+        .text-slides-container {
             display: flex;
-            width: 300%;
-            height: 100%;
+            flex-direction: column;
+            height: 300%;
             transition: transform 0.5s ease-in-out;
         }
-        .slide {
-            width: 33.33%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
+        .text-slide {
+            height: 33.33%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
-        .slide h3 {
+        .text-slide h3 {
             font-size: 24px;
             color: white;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -142,7 +147,7 @@
             padding: 10px;
             border-radius: 5px;
         }
-        .slide p {
+        .text-slide p {
             font-size: 16px;
             color: white;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -151,6 +156,61 @@
             background-color: rgba(0, 0, 0, 0.15);
             padding: 10px;
             border-radius: 5px;
+        }
+        /* Spaces Slideshow */
+        .spaces-slideshow {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+        }
+        .spaces-container {
+            display: flex;
+            flex-direction: column;
+            height: 300%;
+            transition: transform 0.5s ease-in-out;
+        }
+        .space-slide {
+            height: 33.33%;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            animation: slowSlide 9s linear infinite;
+        }
+        @keyframes slowSlide {
+            0% { background-position: center top; }
+            100% { background-position: center bottom; }
+        }
+        .space-slide h3 {
+            font-size: 24px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.15);
+            padding: 10px;
+            border-radius: 5px;
+            margin: 0 20px;
+        }
+        .space-slide p {
+            font-size: 16px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.15);
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 20px;
+            max-width: 600px;
+        }
+        .space-slide button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
         }
         .slideshow-buttons {
             position: absolute;
@@ -172,80 +232,34 @@
         .slideshow-buttons button.active {
             background-color: white;
         }
-        /* Spaces Slideshow */
-        #spaces .spaces-slideshow {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            overflow: hidden;
+        #services p.summary {
+            color: black;
+            margin: 0 20px 20px;
         }
-        #spaces .spaces-container {
-            display: flex;
-            width: 300%;
-            height: 100%;
-        }
-        #spaces .space-slide {
-            width: 33.33%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            animation: slowSlide 9s linear infinite;
-        }
-        @keyframes slowSlide {
-            0% { background-position: 0% center; }
-            100% { background-position: 100% center; }
-        }
-        #spaces .space-slide h3 {
-            font-size: 24px;
-            color: white;
-            background-color: rgba(0, 0, 0, 0.15);
-            padding: 10px;
-            border-radius: 5px;
-            margin: 0 20px;
-        }
-        #spaces .space-slide p {
-            font-size: 16px;
-            color: white;
-            background-color: rgba(0, 0, 0, 0.15);
-            padding: 10px;
-            border-radius: 5px;
-            margin: 10px 20px;
-            max-width: 600px;
-        }
-        #spaces .space-slide button {
-            background-color: black;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
+        #contact p.intro {
+            color: black;
+            margin-bottom: 20px;
         }
         /* Contact Profile */
         .profile {
             display: flex;
+            flex-direction: column;
             align-items: center;
             max-width: 600px;
             margin: 20px auto;
             background-color: rgba(255, 255, 255, 0.9);
             padding: 20px;
             border-radius: 10px;
-            text-align: left;
+            text-align: center;
         }
         .profile img {
-            width: 100px;
-            height: 100px;
+            width: 300px;
+            height: 300px;
             border-radius: 50%;
-            margin-right: 20px;
+            margin-bottom: 20px;
         }
         .profile-text {
-            flex: 1;
+            color: black;
         }
         .profile-text h3 {
             margin: 0;
@@ -254,16 +268,6 @@
         .profile-text p {
             margin: 5px 0;
             font-size: 14px;
-        }
-        #services p.summary {
-            color: white;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-            margin: 0 20px 20px;
-        }
-        #contact p.intro {
-            color: white;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-            margin-bottom: 20px;
         }
         .features {
             display: flex;
@@ -281,6 +285,7 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
+            color: black;
         }
         .tooltip {
             width: 100%;
@@ -291,6 +296,7 @@
             font-size: 14px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.15);
             margin-top: 10px;
+            color: black;
         }
         .contact-form {
             display: flex;
@@ -341,13 +347,16 @@
             .hero p {
                 font-size: 16px;
             }
+            .hero, .section {
+                border: 15px solid #F5F5F5;
+            }
             #why-alabang.section, #spaces.section {
                 height: 300px;
             }
-            .slide h3, #spaces .space-slide h3 {
+            .text-slide h3, .space-slide h3 {
                 font-size: 18px;
             }
-            .slide p, #spaces .space-slide p {
+            .text-slide p, .space-slide p {
                 font-size: 12px;
                 margin: 5px 10px;
             }
@@ -368,12 +377,9 @@
                 font-size: 14px;
                 margin: 0 10px 20px;
             }
-            .profile {
-                flex-direction: column;
-                text-align: center;
-            }
             .profile img {
-                margin: 0 auto 10px;
+                width: 200px;
+                height: 200px;
             }
         }
     </style>
@@ -401,25 +407,25 @@
 
     <div class="section" id="why-alabang">
         <h2>Why Alabang?</h2>
-        <div class="slideshow">
-            <div class="slides-container">
-                <div class="slide" style="background-image: url('why-alabang.jpg');">
+        <div class="text-slideshow">
+            <div class="text-slides-container">
+                <div class="text-slide">
                     <h3>A Strategic Location for Growth</h3>
                     <p>Alabang is a gem for any business looking to grow. Tucked in southern Metro Manila, it’s got easy access to highways like SLEX and is close to the airport—perfect for connecting with clients. Plus, its residential vibe means shorter commutes for your team. It’s a friendly, strategic spot that blends convenience with opportunity.</p>
                 </div>
-                <div class="slide" style="background-image: url('why-alabang2.jpg');">
+                <div class="text-slide">
                     <h3>A Thriving Business Ecosystem</h3>
                     <p>Alabang stands out with its vibrant mix of modern offices like Filinvest City and Northgate Cyberzone, green spaces, and lifestyle spots. It’s a hub that attracts tech startups, large corporations, and creative teams, providing excellent networking and talent opportunities. The nearby Westgate Center and Alabang Town Center offer cozy cafés and upscale dining options for brainstorming sessions or client meetings. It’s a lively setting that boosts both work and enjoyment.</p>
                 </div>
-                <div class="slide" style="background-image: url('why-alabang3.jpg');">
+                <div class="text-slide">
                     <h3>Quality of Life Meets Professional Appeal</h3>
                     <p>Alabang offers a refreshing mix of work and relaxation. It’s calmer than central Manila, with green spaces and parks like River Park to unwind. Your team can enjoy a quick break or weekend outings at local malls, keeping spirits high. The office options here are impressive yet budget-friendly—a great pick for anyone aiming to settle in comfortably.</p>
                 </div>
             </div>
             <div class="slideshow-buttons">
-                <button onclick="showSlide(0)"></button>
-                <button onclick="showSlide(1)"></button>
-                <button onclick="showSlide(2)"></button>
+                <button onclick="showTextSlide(0)"></button>
+                <button onclick="showTextSlide(1)"></button>
+                <button onclick="showTextSlide(2)"></button>
             </div>
         </div>
     </div>
@@ -486,9 +492,10 @@
                 <p>Jayjay Medina is a licensed real estate broker with over a decade of experience, specializing in leasing office spaces in Alabang, Muntinlupa. He helps businesses secure the ideal workspace to match their operations and growth plans. With in-depth knowledge of Alabang’s commercial market and a reputation for professionalism and personalized service, Jayjay ensures a smooth and efficient leasing experience from start to finish.</p>
             </div>
         </div>
-        <form action="mailto:jayjay.officespace@gmail.com" method="POST" enctype="text/plain" class="contact-form">
+        <form action="https://formspree.io/f/xjkolwlo" method="POST" class="contact-form">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
+            <input type="tel" name="contact_number" placeholder="Your Contact Number" required>
             <textarea rows="5" name="message" placeholder="Your Message" required></textarea>
             <button type="submit">Send Message</button>
             <p>Or contact Jayjay via: <a href="https://wa.me/+639958128108">WhatsApp</a> | <a href="viber://chat?number=+639958128108">Viber</a></p>
@@ -502,32 +509,32 @@
     </footer>
 
     <script>
-        // Why Alabang Slideshow
-        let currentSlide = 0;
-        const slidesContainer = document.querySelector('.slides-container');
-        const buttons = document.querySelectorAll('.slideshow-buttons button');
-        const totalSlides = 3;
+        // Why Alabang Text Slideshow
+        let currentTextSlide = 0;
+        const textSlidesContainer = document.querySelector('.text-slides-container');
+        const textButtons = document.querySelectorAll('#why-alabang .slideshow-buttons button');
+        const totalTextSlides = 3;
 
-        function showSlide(index) {
-            slidesContainer.style.transform = `translateX(-${index * 33.33}%)`;
-            buttons.forEach((button, i) => {
+        function showTextSlide(index) {
+            textSlidesContainer.style.transform = `translateY(-${index * 33.33}%)`;
+            textButtons.forEach((button, i) => {
                 button.classList.toggle('active', i === index);
             });
-            currentSlide = index;
+            currentTextSlide = index;
         }
 
         // Initial slide
-        showSlide(0);
+        showTextSlide(0);
 
         // Auto-slide every 7 seconds
         setInterval(() => {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            showSlide(currentSlide);
+            currentTextSlide = (currentTextSlide + 1) % totalTextSlides;
+            showTextSlide(currentTextSlide);
         }, 7000);
 
         // Manual slide control
-        buttons.forEach((button, index) => {
-            button.addEventListener('click', () => showSlide(index));
+        textButtons.forEach((button, index) => {
+            button.addEventListener('click', () => showTextSlide(index));
         });
 
         // Available Spaces Slideshow
@@ -538,7 +545,7 @@
 
         function showSpaceSlide(index) {
             spacesContainer.style.animation = 'none'; // Reset animation
-            spacesContainer.style.transform = `translateX(${index * 33.33}%)`;
+            spacesContainer.style.transform = `translateY(-${index * 33.33}%)`;
             spaceButtons.forEach((button, i) => {
                 button.classList.toggle('active', i === index);
             });
@@ -554,7 +561,7 @@
 
         // Auto-slide every 9 seconds
         setInterval(() => {
-            currentSpaceSlide = (currentSpaceSlide - 1 + totalSpaceSlides) % totalSpaceSlides;
+            currentSpaceSlide = (currentSpaceSlide + 1) % totalSpaceSlides;
             showSpaceSlide(currentSpaceSlide);
         }, 9000);
 
