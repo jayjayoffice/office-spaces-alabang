@@ -16,7 +16,7 @@
             background-color: #F5F5F5;
         }
         .header {
-            background-color: white;
+            background-color: #F5F5F5;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -127,12 +127,13 @@
         }
         .text-slides-container {
             display: flex;
-            flex-direction: column;
-            height: 300%;
+            width: 300%;
+            height: 100%;
             transition: transform 0.5s ease-in-out;
         }
         .text-slide {
-            height: 33.33%;
+            width: 33.33%;
+            height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -204,7 +205,7 @@
             max-width: 600px;
         }
         .space-slide button {
-            background-color: black;
+            background-color: rgba(0, 0, 0, 0.6);
             color: white;
             border: none;
             padding: 10px 15px;
@@ -324,9 +325,14 @@
             cursor: pointer;
         }
         footer {
-            background-color: #f0f0f0;
+            background-color: #F5F5F5;
             padding: 20px;
             text-align: center;
+        }
+        footer a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 5px;
         }
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
@@ -435,18 +441,18 @@
         <div class="spaces-slideshow">
             <div class="spaces-container">
                 <div class="space-slide" style="background-image: url('MapsFCT.jpg');">
-                    <h3>Filinvest Corporate City</h3>
-                    <p>Premium office spaces in Alabang’s master-planned business district, offering modern facilities and excellent connectivity.</p>
-                    <button onclick="window.location.href='#contact'">Inquire Now</button>
-                </div>
-                <div class="space-slide" style="background-image: url('MapsMBS.jpg');">
-                    <h3>Madrigal Business Park</h3>
-                    <p>Strategic office locations with flexible layouts, perfect for startups and established companies alike.</p>
+                    <h3>Spectrum at Filinvest Corporate City</h3>
+                    <p>At the heart of the city’s business landscape, the Spectrum District stands as its economic core. Surrounded by major roads—Corporate Avenue, Commerce Avenue, and Filinvest Avenue—it serves as the central office hub, home to top local and multinational companies. The district also features upscale residences, premier hotels, and vibrant commercial spaces that reflect the dynamic spirit of Filinvest City as a premier central business district.</p>
                     <button onclick="window.location.href='#contact'">Inquire Now</button>
                 </div>
                 <div class="space-slide" style="background-image: url('MapsNOR.jpg');">
                     <h3>Northgate Cyberzone</h3>
-                    <p>PEZA-accredited IT park with state-of-the-art office spaces, ideal for BPOs and tech-driven businesses.</p>
+                    <p>Northgate Cyberzone is an 18.7-hectare, PEZA-registered IT park located at the heart of Filinvest City. Dubbed the BPO and IT hub of the South, it offers a dynamic, campus-style environment tailored to the needs of tech-driven businesses. It’s home to a wide range of industries—including BPOs, KPOs, call centers, fintech, e-commerce, and creative tech such as software and multimedia design. With its strategic location, robust infrastructure, and 24/7 operations, Northgate Cyberzone continues to attract top-tier companies and talent from across the metro.</p>
+                    <button onclick="window.location.href='#contact'">Inquire Now</button>
+                </div>
+                <div class="space-slide" style="background-image: url('MapsMBS.jpg');">
+                    <h3>Madrigal Business Park</h3>
+                    <p>Madrigal Business Park is a master-planned commercial district in Alabang, Muntinlupa. Known for its wide roads, green open spaces, and low-density layout, it offers a calm yet connected business environment. Strategically located near major roads and lifestyle hubs like Alabang Town Center, it is highly accessible. Home to corporate offices, banks, and upscale retail, it blends business convenience with lifestyle appeal—making Madrigal Business Park a preferred address for companies seeking a premium location in the South.</p>
                     <button onclick="window.location.href='#contact'">Inquire Now</button>
                 </div>
             </div>
@@ -504,7 +510,7 @@
     </div>
 
     <footer>
-        <p>About | Contact Info | Social Media: @officespacesalabang</p>
+        <p><a href="#contact">About</a> | <a href="#contact">Contact Info</a> | Social Media: @officespacesalabang</p>
         <p>Disclaimer: All information on this website is for general informational purposes only and may be subject to change.</p>
     </footer>
 
@@ -516,7 +522,7 @@
         const totalTextSlides = 3;
 
         function showTextSlide(index) {
-            textSlidesContainer.style.transform = `translateY(-${index * 33.33}%)`;
+            textSlidesContainer.style.transform = `translateX(-${index * 33.33}%)`;
             textButtons.forEach((button, i) => {
                 button.classList.toggle('active', i === index);
             });
