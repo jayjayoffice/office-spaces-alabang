@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Office Spaces Alabang</title>
+    <link rel="icon" href="FAVICON.png" type="image/png">
     <style>
         html {
             scroll-behavior: smooth;
@@ -12,7 +13,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f8f8;
+            background-color: #F5F5F5;
         }
         .header {
             background-color: white;
@@ -39,7 +40,6 @@
             font-size: 16px;
             margin: 0 12px;
             position: relative;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         .nav a:not(:last-child)::after {
             content: '|';
@@ -48,7 +48,7 @@
             color: #333;
         }
         .hero {
-            background: url('hero-image.png') center/cover no-repeat;
+            background: url('hero-image.jpg') center/cover no-repeat;
             height: 500px;
             color: white;
             display: flex;
@@ -87,18 +87,18 @@
         #why-alabang.section {
             padding: 20px;
             position: relative;
-            height: 600px;
+            height: 400px;
         }
         #spaces.section {
             padding: 20px;
             position: relative;
-            height: 600px;
+            height: 400px;
         }
         #services.section {
             background-image: url('our-services.png');
         }
         #contact.section {
-            background-image: url('contact.png');
+            background-image: url('WebsiteBG.jpg');
         }
         .section h2 {
             font-size: 28px;
@@ -108,7 +108,7 @@
             position: relative;
             z-index: 10;
         }
-        /* Why Alabang Slideshow */
+        /* Slideshow Styles (Why Alabang) */
         .slideshow {
             width: 100%;
             height: 100%;
@@ -183,25 +183,28 @@
         }
         #spaces .spaces-container {
             display: flex;
-            flex-direction: column;
-            height: 300%;
-            width: 100%;
-            transition: transform 0.5s ease-in-out;
+            width: 300%;
+            height: 100%;
         }
         #spaces .space-slide {
-            width: 100%;
-            height: 33.33%;
+            width: 33.33%;
+            height: 100%;
             background-size: cover;
             background-position: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            animation: slowSlide 9s linear infinite;
+        }
+        @keyframes slowSlide {
+            0% { background-position: 0% center; }
+            100% { background-position: 100% center; }
         }
         #spaces .space-slide h3 {
             font-size: 24px;
             color: white;
-            background-color: rgba(0, 0, 0, 0.4);
+            background-color: rgba(0, 0, 0, 0.15);
             padding: 10px;
             border-radius: 5px;
             margin: 0 20px;
@@ -209,14 +212,14 @@
         #spaces .space-slide p {
             font-size: 16px;
             color: white;
-            background-color: rgba(0, 0, 0, 0.4);
+            background-color: rgba(0, 0, 0, 0.15);
             padding: 10px;
             border-radius: 5px;
             margin: 10px 20px;
             max-width: 600px;
         }
         #spaces .space-slide button {
-            background-color: rgba(0, 0, 0, 0.6);
+            background-color: black;
             color: white;
             border: none;
             padding: 10px 15px;
@@ -224,13 +227,33 @@
             cursor: pointer;
             margin-top: 10px;
         }
-        #spaces .slideshow-buttons button {
-            background-color: rgba(0, 0, 0, 0.5);
-            width: 16px;
-            height: 16px;
+        /* Contact Profile */
+        .profile {
+            display: flex;
+            align-items: center;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
         }
-        #spaces .slideshow-buttons button.active {
-            background-color: rgba(0, 0, 0, 1);
+        .profile img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        .profile-text {
+            flex: 1;
+        }
+        .profile-text h3 {
+            margin: 0;
+            font-size: 20px;
+        }
+        .profile-text p {
+            margin: 5px 0;
+            font-size: 14px;
         }
         #services p.summary {
             color: white;
@@ -325,7 +348,7 @@
                 font-size: 18px;
             }
             .slide p, #spaces .space-slide p {
-                font-size: 14px;
+                font-size: 12px;
                 margin: 5px 10px;
             }
             .feature-box {
@@ -344,6 +367,13 @@
             #contact p.intro {
                 font-size: 14px;
                 margin: 0 10px 20px;
+            }
+            .profile {
+                flex-direction: column;
+                text-align: center;
+            }
+            .profile img {
+                margin: 0 auto 10px;
             }
         }
     </style>
@@ -371,46 +401,46 @@
 
     <div class="section" id="why-alabang">
         <h2>Why Alabang?</h2>
-        <div class="slideshow" id="why-alabang-slideshow">
+        <div class="slideshow">
             <div class="slides-container">
-                <div class="slide" style="background-image: url('why-alabang.png');">
+                <div class="slide" style="background-image: url('why-alabang.jpg');">
                     <h3>A Strategic Location for Growth</h3>
                     <p>Alabang is a gem for any business looking to grow. Tucked in southern Metro Manila, it’s got easy access to highways like SLEX and is close to the airport—perfect for connecting with clients. Plus, its residential vibe means shorter commutes for your team. It’s a friendly, strategic spot that blends convenience with opportunity.</p>
                 </div>
-                <div class="slide" style="background-image: url('why-alabang2.png');">
+                <div class="slide" style="background-image: url('why-alabang2.jpg');">
                     <h3>A Thriving Business Ecosystem</h3>
                     <p>Alabang stands out with its vibrant mix of modern offices like Filinvest City and Northgate Cyberzone, green spaces, and lifestyle spots. It’s a hub that attracts tech startups, large corporations, and creative teams, providing excellent networking and talent opportunities. The nearby Westgate Center and Alabang Town Center offer cozy cafés and upscale dining options for brainstorming sessions or client meetings. It’s a lively setting that boosts both work and enjoyment.</p>
                 </div>
-                <div class="slide" style="background-image: url('why-alabang3.png');">
+                <div class="slide" style="background-image: url('why-alabang3.jpg');">
                     <h3>Quality of Life Meets Professional Appeal</h3>
                     <p>Alabang offers a refreshing mix of work and relaxation. It’s calmer than central Manila, with green spaces and parks like River Park to unwind. Your team can enjoy a quick break or weekend outings at local malls, keeping spirits high. The office options here are impressive yet budget-friendly—a great pick for anyone aiming to settle in comfortably.</p>
                 </div>
             </div>
             <div class="slideshow-buttons">
-                <button onclick="showWhyAlabangSlide(0)"></button>
-                <button onclick="showWhyAlabangSlide(1)"></button>
-                <button onclick="showWhyAlabangSlide(2)"></button>
+                <button onclick="showSlide(0)"></button>
+                <button onclick="showSlide(1)"></button>
+                <button onclick="showSlide(2)"></button>
             </div>
         </div>
     </div>
 
     <div class="section" id="spaces">
         <h2>Available Spaces</h2>
-        <div class="spaces-slideshow" id="spaces-slideshow">
+        <div class="spaces-slideshow">
             <div class="spaces-container">
-                <div class="space-slide" style="background-image: url('MapsFCT.png');">
-                    <h3>Spectrum at Filinvest Corporate City</h3>
-                    <p>At the heart of the city’s business landscape, the Spectrum District stands as its economic core. Surrounded by major roads—Corporate Avenue, Commerce Avenue, and Filinvest Avenue—it serves as the central office hub, home to top local and multinational companies. The district also features upscale residences, premier hotels, and vibrant commercial spaces that reflect the dynamic spirit of Filinvest City as a premier central business district.</p>
+                <div class="space-slide" style="background-image: url('MapsFCT.jpg');">
+                    <h3>Filinvest Corporate City</h3>
+                    <p>Premium office spaces in Alabang’s master-planned business district, offering modern facilities and excellent connectivity.</p>
                     <button onclick="window.location.href='#contact'">Inquire Now</button>
                 </div>
-                <div class="space-slide" style="background-image: url('MapsNOR.png');">
-                    <h3>Northgate Cyberzone</h3>
-                    <p>Northgate Cyberzone is an 18.7-hectare, PEZA-registered IT park located at the heart of Filinvest City. Dubbed the BPO and IT hub of the South, it offers a dynamic, campus-style environment tailored to the needs of tech-driven businesses. It’s home to a wide range of industries—including BPOs, KPOs, call centers, fintech, e-commerce, and creative tech such as software and multimedia design. With its strategic location, robust infrastructure, and 24/7 operations, Northgate Cyberzone continues to attract top-tier companies and talent from across the metro.</p>
-                    <button onclick="window.location.href='#contact'">Inquire Now</button>
-                </div>
-                <div class="space-slide" style="background-image: url('MapsMBS.png');">
+                <div class="space-slide" style="background-image: url('MapsMBS.jpg');">
                     <h3>Madrigal Business Park</h3>
-                    <p>Madrigal Business Park is a master-planned commercial district in Alabang, Muntinlupa. Known for its wide roads, green open spaces, and low-density layout, it offers a calm yet connected business environment. Strategically located near major roads and lifestyle hubs like Alabang Town Center, it is highly accessible. Home to corporate offices, banks, and upscale retail, it blends business convenience with lifestyle appeal—making Madrigal Business Park a preferred address for companies seeking a premium location in the South.</p>
+                    <p>Strategic office locations with flexible layouts, perfect for startups and established companies alike.</p>
+                    <button onclick="window.location.href='#contact'">Inquire Now</button>
+                </div>
+                <div class="space-slide" style="background-image: url('MapsNOR.jpg');">
+                    <h3>Northgate Cyberzone</h3>
+                    <p>PEZA-accredited IT park with state-of-the-art office spaces, ideal for BPOs and tech-driven businesses.</p>
                     <button onclick="window.location.href='#contact'">Inquire Now</button>
                 </div>
             </div>
@@ -448,11 +478,18 @@
     <div class="section" id="contact">
         <h2>Let’s Talk</h2>
         <p class="intro">Tell Us Your Requirements. Let's talk.</p>
-        <form action="https://formspree.io/f/xjkolwlo" method="POST" class="contact-form">
-            <input type="text" name="name" placeholder="Your Name">
+        <div class="profile">
+            <img src="DPjayjay.png" alt="Jayjay Medina">
+            <div class="profile-text">
+                <h3>Jayjay Medina</h3>
+                <p>Licensed Real Estate Broker (REBL 18995)</p>
+                <p>Jayjay Medina is a licensed real estate broker with over a decade of experience, specializing in leasing office spaces in Alabang, Muntinlupa. He helps businesses secure the ideal workspace to match their operations and growth plans. With in-depth knowledge of Alabang’s commercial market and a reputation for professionalism and personalized service, Jayjay ensures a smooth and efficient leasing experience from start to finish.</p>
+            </div>
+        </div>
+        <form action="mailto:jayjay.officespace@gmail.com" method="POST" enctype="text/plain" class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
-            <input type="tel" name="phone" placeholder="Your Contact Number" required>
-            <textarea rows="5" name="message" placeholder="Your Message"></textarea>
+            <textarea rows="5" name="message" placeholder="Your Message" required></textarea>
             <button type="submit">Send Message</button>
             <p>Or contact Jayjay via: <a href="https://wa.me/+639958128108">WhatsApp</a> | <a href="viber://chat?number=+639958128108">Viber</a></p>
             <p>Follow us: <a href="https://web.facebook.com/alabangoffice/">Facebook</a> | <a href="https://www.instagram.com/office.spaces.alabang/">Instagram</a></p>
@@ -466,45 +503,50 @@
 
     <script>
         // Why Alabang Slideshow
-        let currentWhyAlabangSlide = 0;
-        const whyAlabangContainer = document.querySelector('#why-alabang .slides-container');
-        const whyAlabangButtons = document.querySelectorAll('#why-alabang .slideshow-buttons button');
-        const totalWhyAlabangSlides = 3;
+        let currentSlide = 0;
+        const slidesContainer = document.querySelector('.slides-container');
+        const buttons = document.querySelectorAll('.slideshow-buttons button');
+        const totalSlides = 3;
 
-        function showWhyAlabangSlide(index) {
-            whyAlabangContainer.style.transform = `translateX(-${index * 33.33}%)`;
-            whyAlabangButtons.forEach((button, i) => {
+        function showSlide(index) {
+            slidesContainer.style.transform = `translateX(-${index * 33.33}%)`;
+            buttons.forEach((button, i) => {
                 button.classList.toggle('active', i === index);
             });
-            currentWhyAlabangSlide = index;
+            currentSlide = index;
         }
 
         // Initial slide
-        showWhyAlabangSlide(0);
+        showSlide(0);
 
         // Auto-slide every 7 seconds
         setInterval(() => {
-            currentWhyAlabangSlide = (currentWhyAlabangSlide + 1) % totalWhyAlabangSlides;
-            showWhyAlabangSlide(currentWhyAlabangSlide);
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
         }, 7000);
 
         // Manual slide control
-        whyAlabangButtons.forEach((button, index) => {
-            button.addEventListener('click', () => showWhyAlabangSlide(index));
+        buttons.forEach((button, index) => {
+            button.addEventListener('click', () => showSlide(index));
         });
 
         // Available Spaces Slideshow
         let currentSpaceSlide = 0;
-        const spacesContainer = document.querySelector('#spaces .spaces-container');
+        const spacesContainer = document.querySelector('.spaces-container');
         const spaceButtons = document.querySelectorAll('#spaces .slideshow-buttons button');
         const totalSpaceSlides = 3;
 
         function showSpaceSlide(index) {
-            spacesContainer.style.transform = `translateY(-${index * 33.33}%)`;
+            spacesContainer.style.animation = 'none'; // Reset animation
+            spacesContainer.style.transform = `translateX(${index * 33.33}%)`;
             spaceButtons.forEach((button, i) => {
                 button.classList.toggle('active', i === index);
             });
             currentSpaceSlide = index;
+            // Restart slow slide animation
+            setTimeout(() => {
+                spacesContainer.style.animation = 'slowSlide 9s linear infinite';
+            }, 50);
         }
 
         // Initial slide
@@ -512,7 +554,7 @@
 
         // Auto-slide every 9 seconds
         setInterval(() => {
-            currentSpaceSlide = (currentSpaceSlide + 1) % totalSpaceSlides;
+            currentSpaceSlide = (currentSpaceSlide - 1 + totalSpaceSlides) % totalSpaceSlides;
             showSpaceSlide(currentSpaceSlide);
         }, 9000);
 
