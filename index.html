@@ -158,6 +158,9 @@
             padding: 10px;
             border-radius: 5px;
         }
+        .text-slide .mobile-text {
+            display: none;
+        }
         /* Spaces Slideshow */
         .spaces-slideshow {
             width: 100%;
@@ -203,6 +206,9 @@
             border-radius: 5px;
             margin: 10px 20px;
             max-width: 600px;
+        }
+        .space-slide .mobile-text {
+            display: none;
         }
         .space-slide button {
             background-color: rgba(0, 0, 0, 0.6);
@@ -341,7 +347,7 @@
                 padding: 10px;
             }
             .nav a {
-                margin: 5px 0;
+                margin: 8px 0;
             }
             .nav a:not(:last-child)::after {
                 content: '|';
@@ -361,10 +367,26 @@
             }
             .text-slide h3, .space-slide h3 {
                 font-size: 18px;
+                margin: 5px 10px;
             }
             .text-slide p, .space-slide p {
-                font-size: 12px;
+                font-size: 14px;
                 margin: 5px 10px;
+                max-width: 90%;
+            }
+            .text-slide .full-text, .space-slide .full-text {
+                display: none;
+            }
+            .text-slide .mobile-text, .space-slide .mobile-text {
+                display: block;
+                font-size: 14px;
+                margin: 5px 10px;
+                max-width: 90%;
+                background-color: rgba(0, 0, 0, 0.15);
+                padding: 10px;
+                border-radius: 5px;
+                color: white;
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
             }
             .feature-box {
                 text-align: center;
@@ -417,15 +439,18 @@
             <div class="text-slides-container">
                 <div class="text-slide">
                     <h3>A Strategic Location for Growth</h3>
-                    <p>Alabang is a gem for any business looking to grow. Tucked in southern Metro Manila, it’s got easy access to highways like SLEX and is close to the airport—perfect for connecting with clients. Plus, its residential vibe means shorter commutes for your team. It’s a friendly, strategic spot that blends convenience with opportunity.</p>
+                    <p class="full-text">Alabang is a gem for any business looking to grow. Tucked in southern Metro Manila, it’s got easy access to highways like SLEX and is close to the airport—perfect for connecting with clients. Plus, its residential vibe means shorter commutes for your team. It’s a friendly, strategic spot that blends convenience with opportunity.</p>
+                    <p class="mobile-text">Alabang offers easy access to SLEX and the airport, ideal for business connections and shorter team commutes.</p>
                 </div>
                 <div class="text-slide">
                     <h3>A Thriving Business Ecosystem</h3>
-                    <p>Alabang stands out with its vibrant mix of modern offices like Filinvest City and Northgate Cyberzone, green spaces, and lifestyle spots. It’s a hub that attracts tech startups, large corporations, and creative teams, providing excellent networking and talent opportunities. The nearby Westgate Center and Alabang Town Center offer cozy cafés and upscale dining options for brainstorming sessions or client meetings. It’s a lively setting that boosts both work and enjoyment.</p>
+                    <p class="full-text">Alabang stands out with its vibrant mix of modern offices like Filinvest City and Northgate Cyberzone, green spaces, and lifestyle spots. It’s a hub that attracts tech startups, large corporations, and creative teams, providing excellent networking and talent opportunities. The nearby Westgate Center and Alabang Town Center offer cozy cafés and upscale dining options for brainstorming sessions or client meetings. It’s a lively setting that boosts both work and enjoyment.</p>
+                    <p class="mobile-text">Alabang’s modern offices, green spaces, and lifestyle hubs like Westgate Center attract startups and corporations.</p>
                 </div>
                 <div class="text-slide">
                     <h3>Quality of Life Meets Professional Appeal</h3>
-                    <p>Alabang offers a refreshing mix of work and relaxation. It’s calmer than central Manila, with green spaces and parks like River Park to unwind. Your team can enjoy a quick break or weekend outings at local malls, keeping spirits high. The office options here are impressive yet budget-friendly—a great pick for anyone aiming to settle in comfortably.</p>
+                    <p class="full-text">Alabang offers a refreshing mix of work and relaxation. It’s calmer than central Manila, with green spaces and parks like River Park to unwind. Your team can enjoy a quick break or weekend outings at local malls, keeping spirits high. The office options here are impressive yet budget-friendly—a great pick for anyone aiming to settle in comfortably.</p>
+                    <p class="mobile-text">Alabang blends work and relaxation with green spaces, malls, and budget-friendly offices.</p>
                 </div>
             </div>
             <div class="slideshow-buttons">
@@ -442,17 +467,20 @@
             <div class="spaces-container">
                 <div class="space-slide" style="background-image: url('MapsFCT.jpg');">
                     <h3>Spectrum at Filinvest Corporate City</h3>
-                    <p>At the heart of the city’s business landscape, the Spectrum District stands as its economic core. Surrounded by major roads—Corporate Avenue, Commerce Avenue, and Filinvest Avenue—it serves as the central office hub, home to top local and multinational companies. The district also features upscale residences, premier hotels, and vibrant commercial spaces that reflect the dynamic spirit of Filinvest City as a premier central business district.</p>
+                    <p class="full-text">At the heart of the city’s business landscape, the Spectrum District stands as its economic core. Surrounded by major roads—Corporate Avenue, Commerce Avenue, and Filinvest Avenue—it serves as the central office hub, home to top local and multinational companies. The district also features upscale residences, premier hotels, and vibrant commercial spaces that reflect the dynamic spirit of Filinvest City as a premier central business district.</p>
+                    <p class="mobile-text">Spectrum District, in Filinvest City, is a central office hub with top companies, hotels, and vibrant spaces.</p>
                     <button onclick="window.location.href='#contact'">Inquire Now</button>
                 </div>
                 <div class="space-slide" style="background-image: url('MapsNOR.jpg');">
                     <h3>Northgate Cyberzone</h3>
-                    <p>Northgate Cyberzone is an 18.7-hectare, PEZA-registered IT park located at the heart of Filinvest City. Dubbed the BPO and IT hub of the South, it offers a dynamic, campus-style environment tailored to the needs of tech-driven businesses. It’s home to a wide range of industries—including BPOs, KPOs, call centers, fintech, e-commerce, and creative tech such as software and multimedia design. With its strategic location, robust infrastructure, and 24/7 operations, Northgate Cyberzone continues to attract top-tier companies and talent from across the metro.</p>
+                    <p class="full-text">Northgate Cyberzone is an 18.7-hectare, PEZA-registered IT park located at the heart of Filinvest City. Dubbed the BPO and IT hub of the South, it offers a dynamic, campus-style environment tailored to the needs of tech-driven businesses. It’s home to a wide range of industries—including BPOs, KPOs, call centers, fintech, e-commerce, and creative tech such as software and multimedia design. With its strategic location, robust infrastructure, and 24/7 operations, Northgate Cyberzone continues to attract top-tier companies and talent from across the metro.</p>
+                    <p class="mobile-text">Northgate Cyberzone, a PEZA-registered IT park, is a tech hub for BPOs, fintech, and creative industries.</p>
                     <button onclick="window.location.href='#contact'">Inquire Now</button>
                 </div>
                 <div class="space-slide" style="background-image: url('MapsMBS.jpg');">
                     <h3>Madrigal Business Park</h3>
-                    <p>Madrigal Business Park is a master-planned commercial district in Alabang, Muntinlupa. Known for its wide roads, green open spaces, and low-density layout, it offers a calm yet connected business environment. Strategically located near major roads and lifestyle hubs like Alabang Town Center, it is highly accessible. Home to corporate offices, banks, and upscale retail, it blends business convenience with lifestyle appeal—making Madrigal Business Park a preferred address for companies seeking a premium location in the South.</p>
+                    <p class="full-text">Madrigal Business Park is a master-planned commercial district in Alabang, Muntinlupa. Known for its wide roads, green open spaces, and low-density layout, it offers a calm yet connected business environment. Strategically located near major roads and lifestyle hubs like Alabang Town Center, it is highly accessible. Home to corporate offices, banks, and upscale retail, it blends business convenience with lifestyle appeal—making Madrigal Business Park a preferred address for companies seeking a premium location in the South.</p>
+                    <p class="mobile-text">Madrigal Business Park offers a calm, accessible business area with offices, banks, and retail near Alabang Town Center.</p>
                     <button onclick="window.location.href='#contact'">Inquire Now</button>
                 </div>
             </div>
@@ -578,4 +606,3 @@
     </script>
 </body>
 </html>
-
