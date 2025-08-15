@@ -91,6 +91,8 @@
             position: relative;
             height: 400px;
             background-image: url('why-alabang2.jpg');
+            background-size: cover;
+            background-position: center;
         }
         #spaces.section {
             padding: 20px;
@@ -276,6 +278,9 @@
             margin: 5px 0;
             font-size: 14px;
         }
+        .profile-text .mobile-text {
+            display: none;
+        }
         .features {
             display: flex;
             justify-content: space-around;
@@ -362,7 +367,12 @@
             .hero, .section {
                 border: 15px solid #F5F5F5;
             }
-            #why-alabang.section, #spaces.section {
+            #why-alabang.section {
+                height: 350px; /* Increased height for mobile to make image taller */
+                background-size: cover; /* Ensure image covers without distortion */
+                background-position: center;
+            }
+            #spaces.section {
                 height: 300px;
             }
             .text-slide h3, .space-slide h3 {
@@ -387,6 +397,18 @@
                 border-radius: 5px;
                 color: white;
                 text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            .profile-text .full-text {
+                display: none;
+            }
+            .profile-text .mobile-text {
+                display: block;
+                font-size: 14px;
+                margin: 5px 0;
+            }
+            .profile-text .license-info {
+                display: block; /* Move REBL to new line */
+                margin-top: 5px;
             }
             .feature-box {
                 text-align: center;
@@ -450,7 +472,7 @@
                 <div class="text-slide">
                     <h3>Quality of Life Meets Professional Appeal</h3>
                     <p class="full-text">Alabang offers a refreshing mix of work and relaxation. It’s calmer than central Manila, with green spaces and parks like River Park to unwind. Your team can enjoy a quick break or weekend outings at local malls, keeping spirits high. The office options here are impressive yet budget-friendly—a great pick for anyone aiming to settle in comfortably.</p>
-                    <p class="mobile-text">Alabang blends work and relaxation with green spaces, malls, and budget-friendly offices.</p>
+                    <p class="mobile-text">Alabang blends work and relaxation with green spaces, malls, and cost-effective offices.</p>
                 </div>
             </div>
             <div class="slideshow-buttons">
@@ -522,8 +544,8 @@
             <img src="DPjayjay.png" alt="Jayjay Medina">
             <div class="profile-text">
                 <h3>Jayjay Medina</h3>
-                <p>Licensed Real Estate Broker (REBL 18995)</p>
-                <p>Jayjay Medina is a licensed real estate broker with over a decade of experience, specializing in leasing office spaces in Alabang, Muntinlupa. He helps businesses secure the ideal workspace to match their operations and growth plans. With in-depth knowledge of Alabang’s commercial market and a reputation for professionalism and personalized service, Jayjay ensures a smooth and efficient leasing experience from start to finish.</p>
+                <p class="full-text">Licensed Real Estate Broker (REBL 18995)<br>Jayjay Medina is a licensed real estate broker with over a decade of experience, specializing in leasing office spaces in Alabang, Muntinlupa. He helps businesses secure the ideal workspace to match their operations and growth plans. With in-depth knowledge of Alabang’s commercial market and a reputation for professionalism and personalized service, Jayjay ensures a smooth and efficient leasing experience from start to finish.</p>
+                <p class="mobile-text">Licensed Real Estate Broker<br><span class="license-info">(REBL 18995)</span><br>Jayjay Medina, with over 10 years of experience, specializes in leasing office spaces in Alabang, ensuring a smooth process.</p>
             </div>
         </div>
         <form action="https://formspree.io/f/xjkolwlo" method="POST" class="contact-form">
