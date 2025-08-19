@@ -345,11 +345,66 @@
             color: #333;
             margin: 0 5px;
         }
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 10px;
+            z-index: 1001;
+        }
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .mobile-nav.active {
+            display: flex;
+        }
+        .mobile-nav a {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .mobile-nav a:hover {
+            text-decoration: underline;
+        }
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .header {
-                flex-direction: column;
-                padding: 10px;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 20px;
+            }
+            .nav {
+                display: none; /* Hide original nav links */
+            }
+            .hamburger {
+                display: block; /* Show hamburger button */
+            }
+            .header-logo {
+                display: flex;
+                align-items: center;
             }
             .nav a {
                 margin: 8px 0;
@@ -368,8 +423,8 @@
                 border: 15px solid #F5F5F5;
             }
             #why-alabang.section {
-                height: 350px; /* Increased height for mobile to make image taller */
-                background-size: cover; /* Ensure image covers without distortion */
+                height: 350px;
+                background-size: cover;
                 background-position: center;
             }
             #spaces.section {
@@ -407,7 +462,7 @@
                 margin: 5px 0;
             }
             .profile-text .license-info {
-                display: block; /* Move REBL to new line */
+                display: block;
                 margin-top: 5px;
             }
             .feature-box {
@@ -436,11 +491,23 @@
 </head>
 <body>
     <div class="header">
-        <div style="display: flex; align-items: center;">
+        <div class="header-logo">
             <img src="logo001.png" alt="Office Spaces Alabang">
             <span>Alabang Offices</span>
         </div>
+        <button class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <nav class="nav">
+            <a href="#home">Home</a>
+            <a href="#why-alabang">Why Alabang?</a>
+            <a href="#spaces">Available Spaces</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <nav class="mobile-nav">
             <a href="#home">Home</a>
             <a href="#why-alabang">Why Alabang?</a>
             <a href="#spaces">Available Spaces</a>
@@ -545,7 +612,7 @@
             <div class="profile-text">
                 <h3>Jayjay Medina</h3>
                 <p class="full-text">Licensed Real Estate Broker (REBL 18995)<br>Jayjay Medina is a licensed real estate broker with over a decade of experience, specializing in leasing office spaces in Alabang, Muntinlupa. He helps businesses secure the ideal workspace to match their operations and growth plans. With in-depth knowledge of Alabang’s commercial market and a reputation for professionalism and personalized service, Jayjay ensures a smooth and efficient leasing experience from start to finish.</p>
-                <p class="mobile-text">Licensed Real Estate Broker<br><span class="license-info">(REBL 18995)</span><br>Jayjay Medina, with over 10 years of experience, specializes in leasing office spaces in Alabang, ensuring a smooth process.</p>
+                <p class="mobile-text">Licensed Real Estate Broker<br><span class="license-info">(REBL 18995)</span><br>Jayjay Medina specializes in leasing Alabang office spaces.</p>
             </div>
         </div>
         <form action="https://formspree.io/f/xjkolwlo" method="POST" class="contact-form">
@@ -565,6 +632,21 @@
     </footer>
 
     <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const mobileNav = document.querySelector('.mobile-nav');
+
+        hamburger.addEventListener('click', () => {
+            mobileNav.classList.toggle('active');
+        });
+
+        // Close mobile nav when a link is clicked
+        document.querySelectorAll('.mobile-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+            });
+        });
+
         // Why Alabang Text Slideshow
         let currentTextSlide = 0;
         const textSlidesContainer = document.querySelector('.text-slides-container');
