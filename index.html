@@ -374,6 +374,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            padding: 20px;
         }
         .mobile-nav.active {
             display: flex;
@@ -388,6 +389,24 @@
         .mobile-nav a:hover {
             text-decoration: underline;
         }
+        .close-nav {
+            display: none;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            line-height: 40px;
+        }
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .header {
@@ -401,6 +420,9 @@
             }
             .hamburger {
                 display: block; /* Show hamburger button */
+            }
+            .close-nav {
+                display: flex; /* Show close button in mobile nav */
             }
             .header-logo {
                 display: flex;
@@ -508,6 +530,7 @@
             <a href="#contact">Contact</a>
         </nav>
         <nav class="mobile-nav">
+            <button class="close-nav" aria-label="Close navigation">&times;</button>
             <a href="#home">Home</a>
             <a href="#why-alabang">Why Alabang?</a>
             <a href="#spaces">Available Spaces</a>
@@ -517,7 +540,7 @@
     </div>
 
     <div class="hero" id="home">
-        <h1>Find the Best Offices in Alabang</h1>
+        <h2>Find the Best Offices in Alabang</h2>
         <p>We help businesses find the Best Office in the heart of Muntinlupa’s business district.</p>
         <button class="cta-button" onclick="window.location.href='#contact'">Tell Us Your Requirements</button>
     </div>
@@ -607,14 +630,6 @@
     <div class="section" id="contact">
         <h2>Let’s Talk</h2>
         <p class="intro">Tell Us Your Requirements.</p>
-        <div class="profile">
-            <img src="DPjayjay.png" alt="Jayjay Medina">
-            <div class="profile-text">
-                <h3>Jayjay Medina</h3>
-                <p class="full-text">Licensed Real Estate Broker (REBL 18995)<br>Jayjay Medina is a licensed real estate broker with over a decade of experience, specializing in leasing office spaces in Alabang, Muntinlupa. He helps businesses secure the ideal workspace to match their operations and growth plans. With in-depth knowledge of Alabang’s commercial market and a reputation for professionalism and personalized service, Jayjay ensures a smooth and efficient leasing experience from start to finish.</p>
-                <p class="mobile-text">Licensed Real Estate Broker<br><span class="license-info">(REBL 18995)</span><br>Specializes in office space leasing in Alabang—helping businesses find the right workspace with ease.</p>
-            </div>
-        </div>
         <form action="https://formspree.io/f/xjkolwlo" method="POST" class="contact-form">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
@@ -624,6 +639,14 @@
             <p>Or contact Jayjay via: <a href="https://wa.me/+639958128108">WhatsApp</a> | <a href="viber://chat?number=+639958128108">Viber</a></p>
             <p>Follow us: <a href="https://web.facebook.com/alabangoffice/">Facebook</a> | <a href="https://www.instagram.com/office.spaces.alabang/">Instagram</a></p>
         </form>
+        <div class="profile">
+            <img src="DPjayjay.png" alt="Jayjay Medina">
+            <div class="profile-text">
+                <h3>Jayjay Medina</h3>
+                <p class="full-text">Licensed Real Estate Broker (REBL 18995)<br>Jayjay Medina is a licensed real estate broker with over a decade of experience, specializing in leasing office spaces in Alabang, Muntinlupa. He helps businesses secure the ideal workspace to match their operations and growth plans. With in-depth knowledge of Alabang’s commercial market and a reputation for professionalism and personalized service, Jayjay ensures a smooth and efficient leasing experience from start to finish.</p>
+                <p class="mobile-text">Licensed Real Estate Broker<br><span class="license-info">(REBL 18995)</span><br>Specializes in office space leasing in Alabang—helping businesses find the right workspace with ease.</p>
+            </div>
+        </div>
     </div>
 
     <footer>
@@ -635,9 +658,14 @@
         // Hamburger Menu Toggle
         const hamburger = document.querySelector('.hamburger');
         const mobileNav = document.querySelector('.mobile-nav');
+        const closeNav = document.querySelector('.close-nav');
 
         hamburger.addEventListener('click', () => {
             mobileNav.classList.toggle('active');
+        });
+
+        closeNav.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
         });
 
         // Close mobile nav when a link is clicked
@@ -710,5 +738,3 @@
     </script>
 </body>
 </html>
-
-
