@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Office Spaces Alabang</title>
-    <link rel="icon" href="FAVICON.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico?v=1" type="image/x-icon">
     <style>
         html {
             scroll-behavior: smooth;
@@ -94,15 +94,7 @@
             background-size: cover;
             background-position: center;
         }
-        #spaces.section {
-            padding: 20px;
-            position: relative;
-            height: 400px;
-        }
-        #services.section {
-            background-image: url('WebsiteBG.jpg');
-        }
-        #contact.section {
+        #spaces.section, #services.section, #contact.section {
             background-image: url('WebsiteBG.jpg');
         }
         .section h2 {
@@ -111,14 +103,13 @@
             position: relative;
             z-index: 10;
         }
-        #why-alabang h2, #spaces h2 {
+        #why-alabang h2 {
             color: white;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
-        #services h2, #contact h2 {
+        #spaces h2, #services h2, #contact h2 {
             color: black;
         }
-        /* Why Alabang Text Slideshow */
         .text-slideshow {
             width: 100%;
             height: 100%;
@@ -163,64 +154,6 @@
         .text-slide .mobile-text {
             display: none;
         }
-        /* Spaces Slideshow */
-        .spaces-slideshow {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            overflow: hidden;
-        }
-        .spaces-container {
-            display: flex;
-            flex-direction: column;
-            height: 300%;
-            transition: transform 0.5s ease-in-out;
-        }
-        .space-slide {
-            height: 33.33%;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            animation: slowSlide 9s linear infinite;
-        }
-        @keyframes slowSlide {
-            0% { background-position: center top; }
-            100% { background-position: center bottom; }
-        }
-        .space-slide h3 {
-            font-size: 24px;
-            color: white;
-            background-color: rgba(0, 0, 0, 0.15);
-            padding: 10px;
-            border-radius: 5px;
-            margin: 0 20px;
-        }
-        .space-slide p {
-            font-size: 16px;
-            color: white;
-            background-color: rgba(0, 0, 0, 0.15);
-            padding: 10px;
-            border-radius: 5px;
-            margin: 10px 20px;
-            max-width: 600px;
-        }
-        .space-slide .mobile-text {
-            display: none;
-        }
-        .space-slide button {
-            background-color: rgba(0, 0, 0, 0.6);
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
         .slideshow-buttons {
             position: absolute;
             bottom: 20px;
@@ -241,7 +174,7 @@
         .slideshow-buttons button.active {
             background-color: white;
         }
-        #services p.summary {
+        #services p.summary, #spaces p.summary {
             color: black;
             margin: 0 20px 20px;
         }
@@ -249,7 +182,6 @@
             color: black;
             margin-bottom: 20px;
         }
-        /* Contact Profile */
         .profile {
             display: flex;
             flex-direction: column;
@@ -345,7 +277,6 @@
             color: #333;
             margin: 0 5px;
         }
-        /* Hamburger Menu */
         .hamburger {
             display: none;
             cursor: pointer;
@@ -407,7 +338,6 @@
             align-items: center;
             line-height: 40px;
         }
-        /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .header {
                 flex-direction: row;
@@ -416,13 +346,13 @@
                 padding: 10px 20px;
             }
             .nav {
-                display: none; /* Hide original nav links */
+                display: none;
             }
             .hamburger {
-                display: block; /* Show hamburger button */
+                display: block;
             }
             .close-nav {
-                display: flex; /* Show close button in mobile nav */
+                display: flex;
             }
             .header-logo {
                 display: flex;
@@ -449,22 +379,19 @@
                 background-size: cover;
                 background-position: center;
             }
-            #spaces.section {
-                height: 300px;
-            }
-            .text-slide h3, .space-slide h3 {
+            .text-slide h3 {
                 font-size: 18px;
                 margin: 5px 10px;
             }
-            .text-slide p, .space-slide p {
+            .text-slide p {
                 font-size: 14px;
                 margin: 5px 10px;
                 max-width: 90%;
             }
-            .text-slide .full-text, .space-slide .full-text {
+            .text-slide .full-text {
                 display: none;
             }
-            .text-slide .mobile-text, .space-slide .mobile-text {
+            .text-slide .mobile-text {
                 display: block;
                 font-size: 14px;
                 margin: 5px 10px;
@@ -496,7 +423,7 @@
                 padding: 5px 0;
                 font-size: 12px;
             }
-            #services p.summary {
+            #services p.summary, #spaces p.summary {
                 font-size: 14px;
                 margin: 0 10px 20px;
             }
@@ -540,7 +467,7 @@
     </div>
 
     <div class="hero" id="home">
-        <h2>Find the Best Offices in Alabang</h2>
+        <h1>Find the Best Offices in Alabang</h1>
         <p>We help businesses find the Best Office in the heart of Muntinlupa’s business district.</p>
         <button class="cta-button" onclick="window.location.href='#contact'">Tell Us Your Requirements</button>
     </div>
@@ -575,31 +502,19 @@
 
     <div class="section" id="spaces">
         <h2>Available Spaces</h2>
-        <div class="spaces-slideshow">
-            <div class="spaces-container">
-                <div class="space-slide" style="background-image: url('MapsFCT.jpg');">
-                    <h3>Spectrum at Filinvest Corporate City</h3>
-                    <p class="full-text">At the heart of the city’s business landscape, the Spectrum District stands as its economic core. Surrounded by major roads—Corporate Avenue, Commerce Avenue, and Filinvest Avenue—it serves as the central office hub, home to top local and multinational companies. The district also features upscale residences, premier hotels, and vibrant commercial spaces that reflect the dynamic spirit of Filinvest City as a premier central business district.</p>
-                    <p class="mobile-text">Spectrum District, in Filinvest City, is a central office hub with top companies, hotels, and vibrant spaces.</p>
-                    <button onclick="window.location.href='#contact'">Inquire Now</button>
-                </div>
-                <div class="space-slide" style="background-image: url('MapsNOR.jpg');">
-                    <h3>Northgate Cyberzone</h3>
-                    <p class="full-text">Northgate Cyberzone is an 18.7-hectare, PEZA-registered IT park located at the heart of Filinvest City. Dubbed the BPO and IT hub of the South, it offers a dynamic, campus-style environment tailored to the needs of tech-driven businesses. It’s home to a wide range of industries—including BPOs, KPOs, call centers, fintech, e-commerce, and creative tech such as software and multimedia design. With its strategic location, robust infrastructure, and 24/7 operations, Northgate Cyberzone continues to attract top-tier companies and talent from across the metro.</p>
-                    <p class="mobile-text">Northgate Cyberzone, a PEZA-registered IT park, is a tech hub for BPOs, fintech, and creative industries.</p>
-                    <button onclick="window.location.href='#contact'">Inquire Now</button>
-                </div>
-                <div class="space-slide" style="background-image: url('MapsMBS.jpg');">
-                    <h3>Madrigal Business Park</h3>
-                    <p class="full-text">Madrigal Business Park is a master-planned commercial district in Alabang, Muntinlupa. Known for its wide roads, green open spaces, and low-density layout, it offers a calm yet connected business environment. Strategically located near major roads and lifestyle hubs like Alabang Town Center, it is highly accessible. Home to corporate offices, banks, and upscale retail, it blends business convenience with lifestyle appeal—making Madrigal Business Park a preferred address for companies seeking a premium location in the South.</p>
-                    <p class="mobile-text">Madrigal Business Park offers a calm, accessible business area with offices, banks, and retail near Alabang Town Center.</p>
-                    <button onclick="window.location.href='#contact'">Inquire Now</button>
-                </div>
+        <p class="summary">Explore premier office spaces in Alabang’s top business districts, tailored to your needs. Contact us for current availability.</p>
+        <div class="features">
+            <div class="feature-box">
+                Spectrum at Filinvest Corporate City
+                <div class="tooltip">A central business hub in Filinvest City with modern offices, ideal for corporations and startups. Inquire for available units.</div>
             </div>
-            <div class="slideshow-buttons">
-                <button onclick="showSpaceSlide(0)"></button>
-                <button onclick="showSpaceSlide(1)"></button>
-                <button onclick="showSpaceSlide(2)"></button>
+            <div class="feature-box">
+                Northgate Cyberzone
+                <div class="tooltip">A PEZA-registered IT park hosting BPOs, fintech, and creative tech firms. Contact us for available spaces.</div>
+            </div>
+            <div class="feature-box">
+                Madrigal Business Park
+                <div class="tooltip">A low-density commercial district with accessible, premium offices near lifestyle hubs. Ask about current listings.</div>
             </div>
         </div>
     </div>
@@ -637,7 +552,7 @@
             <textarea rows="5" name="message" placeholder="Your Message" required></textarea>
             <button type="submit">Send Message</button>
             <p>Or contact Jayjay via: <a href="https://wa.me/+639958128108">WhatsApp</a> | <a href="viber://chat?number=+639958128108">Viber</a></p>
-            <p>Follow us: <a href="https://web.facebook.com/alabangoffice/">Facebook</a> | <a href="https://www.instagram.com/office.spaces.alabang/">Instagram</a></p>
+            <p>Follow us: <a href="https://web.facebook.com/alabangoffices">Facebook</a> | <a href="https://www.instagram.com/alabangoffices/">Instagram</a></p>
         </form>
         <div class="profile">
             <img src="DPjayjay.png" alt="Jayjay Medina">
@@ -650,12 +565,11 @@
     </div>
 
     <footer>
-        <p><a href="#contact">About</a> | <a href="#contact">Contact Info</a> | Social Media: @officespacesalabang</p>
+        <p><a href="#contact">About</a> | <a href="#contact">Contact Info</a> | Social Media: <a href="https://alabangoffices.com">@alabangoffices</a></p>
         <p>Disclaimer: All information on this website is for general informational purposes only and may be subject to change.</p>
     </footer>
 
     <script>
-        // Hamburger Menu Toggle
         const hamburger = document.querySelector('.hamburger');
         const mobileNav = document.querySelector('.mobile-nav');
         const closeNav = document.querySelector('.close-nav');
@@ -668,14 +582,12 @@
             mobileNav.classList.remove('active');
         });
 
-        // Close mobile nav when a link is clicked
         document.querySelectorAll('.mobile-nav a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileNav.classList.remove('active');
             });
         });
 
-        // Why Alabang Text Slideshow
         let currentTextSlide = 0;
         const textSlidesContainer = document.querySelector('.text-slides-container');
         const textButtons = document.querySelectorAll('#why-alabang .slideshow-buttons button');
@@ -689,51 +601,15 @@
             currentTextSlide = index;
         }
 
-        // Initial slide
         showTextSlide(0);
 
-        // Auto-slide every 7 seconds
         setInterval(() => {
             currentTextSlide = (currentTextSlide + 1) % totalTextSlides;
             showTextSlide(currentTextSlide);
         }, 7000);
 
-        // Manual slide control
         textButtons.forEach((button, index) => {
             button.addEventListener('click', () => showTextSlide(index));
-        });
-
-        // Available Spaces Slideshow
-        let currentSpaceSlide = 0;
-        const spacesContainer = document.querySelector('.spaces-container');
-        const spaceButtons = document.querySelectorAll('#spaces .slideshow-buttons button');
-        const totalSpaceSlides = 3;
-
-        function showSpaceSlide(index) {
-            spacesContainer.style.animation = 'none'; // Reset animation
-            spacesContainer.style.transform = `translateY(-${index * 33.33}%)`;
-            spaceButtons.forEach((button, i) => {
-                button.classList.toggle('active', i === index);
-            });
-            currentSpaceSlide = index;
-            // Restart slow slide animation
-            setTimeout(() => {
-                spacesContainer.style.animation = 'slowSlide 9s linear infinite';
-            }, 50);
-        }
-
-        // Initial slide
-        showSpaceSlide(0);
-
-        // Auto-slide every 9 seconds
-        setInterval(() => {
-            currentSpaceSlide = (currentSpaceSlide + 1) % totalSpaceSlides;
-            showSpaceSlide(currentSpaceSlide);
-        }, 9000);
-
-        // Manual slide control
-        spaceButtons.forEach((button, index) => {
-            button.addEventListener('click', () => showSpaceSlide(index));
         });
     </script>
 </body>
