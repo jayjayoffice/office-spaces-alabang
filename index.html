@@ -220,7 +220,7 @@
             gap: 20px;
         }
         .feature-box {
-            flex: 1 1 200px;
+            flex: 1 1 250px;
             padding: 20px;
             border: 1px solid #ddd;
             border-radius: 10px;
@@ -230,6 +230,15 @@
             align-items: center;
             text-align: center;
             color: black;
+        }
+        .feature-box button {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
         }
         .tooltip {
             width: 100%;
@@ -241,6 +250,12 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.15);
             margin-top: 10px;
             color: black;
+        }
+        .full-text {
+            display: block;
+        }
+        .mobile-text {
+            display: none;
         }
         .contact-form {
             display: flex;
@@ -417,11 +432,20 @@
             .feature-box {
                 text-align: center;
             }
-            .feature-box .tooltip {
-                box-shadow: none;
-                border: none;
-                padding: 5px 0;
+            .feature-box .full-text {
+                display: none;
+            }
+            .feature-box .mobile-text {
+                display: block;
                 font-size: 12px;
+                margin: 5px 0;
+                padding: 5px;
+                border: none;
+                box-shadow: none;
+            }
+            .feature-box button {
+                font-size: 12px;
+                padding: 8px 12px;
             }
             #services p.summary, #spaces p.summary {
                 font-size: 14px;
@@ -506,15 +530,21 @@
         <div class="features">
             <div class="feature-box">
                 Spectrum at Filinvest Corporate City
-                <div class="tooltip">A central business hub in Filinvest City with modern offices, ideal for corporations and startups. Inquire for available units.</div>
+                <div class="tooltip full-text">At the heart of the city’s business landscape, the Spectrum District stands as its economic core. Surrounded by major roads—Corporate Avenue, Commerce Avenue, and Filinvest Avenue—it serves as the central office hub, home to top local and multinational companies. The district also features upscale residences, premier hotels, and vibrant commercial spaces that reflect the dynamic spirit of Filinvest City as a premier central business district.</div>
+                <div class="tooltip mobile-text">Spectrum District, in Filinvest City, is a central office hub with top companies, hotels, and vibrant spaces.</div>
+                <button onclick="window.location.href='#contact'">Inquire Now</button>
             </div>
             <div class="feature-box">
                 Northgate Cyberzone
-                <div class="tooltip">A PEZA-registered IT park hosting BPOs, fintech, and creative tech firms. Contact us for available spaces.</div>
+                <div class="tooltip full-text">Northgate Cyberzone is an 18.7-hectare, PEZA-registered IT park located at the heart of Filinvest City. Dubbed the BPO and IT hub of the South, it offers a dynamic, campus-style environment tailored to the needs of tech-driven businesses. It’s home to a wide range of industries—including BPOs, KPOs, call centers, fintech, e-commerce, and creative tech such as software and multimedia design. With its strategic location, robust infrastructure, and 24/7 operations, Northgate Cyberzone continues to attract top-tier companies and talent from across the metro.</div>
+                <div class="tooltip mobile-text">Northgate Cyberzone, a PEZA-registered IT park, is a tech hub for BPOs, fintech, and creative industries.</div>
+                <button onclick="window.location.href='#contact'">Inquire Now</button>
             </div>
             <div class="feature-box">
                 Madrigal Business Park
-                <div class="tooltip">A low-density commercial district with accessible, premium offices near lifestyle hubs. Ask about current listings.</div>
+                <div class="tooltip full-text">Madrigal Business Park is a master-planned commercial district in Alabang, Muntinlupa. Known for its wide roads, green open spaces, and low-density layout, it offers a calm yet connected business environment. Strategically located near major roads and lifestyle hubs like Alabang Town Center, it is highly accessible. Home to corporate offices, banks, and upscale retail, it blends business convenience with lifestyle appeal—making Madrigal Business Park a preferred address for companies seeking a premium location in the South.</div>
+                <div class="tooltip mobile-text">Madrigal Business Park offers a calm, accessible business area with offices, banks, and retail near Alabang Town Center.</div>
+                <button onclick="window.location.href='#contact'">Inquire Now</button>
             </div>
         </div>
     </div>
