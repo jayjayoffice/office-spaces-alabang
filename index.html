@@ -5,671 +5,170 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Find premium office spaces in Alabang, Muntinlupa. Lease PEZA-accredited offices in Filinvest City, Northgate Cyberzone, and Madrigal Business Park with expert guidance from Jayjay Medina, Licensed Real Estate Broker.">
     <meta name="keywords" content="offices in Alabang, Alabang office spaces, Muntinlupa office lease, PEZA office Alabang, Filinvest City offices, Northgate Cyberzone office space, Madrigal Business Park lease, commercial real estate Alabang, office rental Muntinlupa, Alabang BPO office">
-    <title>Office Spaces Alabang</title>
+    <title>Alabang Offices - Home</title>
     <link rel="icon" href="favicon.ico?v=1" type="image/x-icon">
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #F5F5F5;
-        }
-        .header {
-            background-color: #F5F5F5;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 40px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .header img {
-            height: 40px;
-            margin-right: 10px;
-        }
-        .header span {
-            font-size: 18px;
-            font-weight: bold;
-        }
-        .nav a {
-            text-decoration: none;
-            color: #333;
-            font-size: 16px;
-            margin: 0 12px;
-            position: relative;
-        }
-        .nav a:not(:last-child)::after {
-            content: '|';
-            position: absolute;
-            right: -14px;
-            color: #333;
-        }
-        .hero {
-            background: url('hero-image.jpg') center/cover no-repeat;
-            height: 500px;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-            border: 25px solid #F5F5F5;
-        }
-        .hero h1 {
-            font-size: 40px;
-            font-weight: bold;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        .hero p {
-            font-size: 20px;
-            margin: 10px 0 20px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        .hero .cta-button {
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        .section {
-            padding: 50px 20px;
-            background-color: #d3d3d3;
-            text-align: center;
-            background-size: cover;
-            background-position: center;
-            border: 25px solid #F5F5F5;
-        }
-        #why-alabang.section {
-            padding: 20px;
-            position: relative;
-            height: 400px;
-            background-image: url('why-alabang2.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-        #spaces.section, #services.section, #contact.section {
-            background-image: url('WebsiteBG.jpg');
-        }
-        .section h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 10;
-        }
-        #why-alabang h2 {
-            color: white;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        #spaces h2, #services h2, #contact h2 {
-            color: black;
-        }
-        .text-slideshow {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            overflow: hidden;
-        }
-        .text-slides-container {
-            display: flex;
-            width: 300%;
-            height: 100%;
-            transition: transform 0.5s ease-in-out;
-        }
-        .text-slide {
-            width: 33.33%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .text-slide h3 {
-            font-size: 24px;
-            color: white;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-            margin: 0 20px;
-            background-color: rgba(0, 0, 0, 0.15);
-            padding: 10px;
-            border-radius: 5px;
-        }
-        .text-slide p {
-            font-size: 16px;
-            color: white;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-            margin: 10px 20px;
-            max-width: 600px;
-            background-color: rgba(0, 0, 0, 0.15);
-            padding: 10px;
-            border-radius: 5px;
-        }
-        .text-slide .mobile-text {
-            display: none;
-        }
-        .slideshow-buttons {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-            z-index: 10;
-        }
-        .slideshow-buttons button {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            border: none;
-            background-color: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-        }
-        .slideshow-buttons button.active {
-            background-color: white;
-        }
-        #services p.summary, #spaces p.summary {
-            color: black;
-            margin: 0 20px 20px;
-        }
-        #contact p.intro {
-            color: black;
-            margin-bottom: 20px;
-        }
-        .profile {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 600px;
-            margin: 20px auto;
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-        }
-        .profile img {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-        }
-        .profile-text {
-            color: black;
-        }
-        .profile-text h3 {
-            margin: 0;
-            font-size: 20px;
-        }
-        .profile-text p {
-            margin: 5px 0;
-            font-size: 14px;
-        }
-        .profile-text .contact-number {
-            margin: 5px 0;
-            font-size: 14px;
-        }
-        .profile-text .mobile-text {
-            display: none;
-        }
-        .features {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .feature-box {
-            flex: 1 1 250px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            background-color: rgba(255, 255, 255, 0.8);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            color: black;
-        }
-        .feature-box button {
-            background-color: rgba(0, 0, 0, 0.6);
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-        .tooltip {
-            width: 100%;
-            background-color: white;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 10px;
-            font-size: 14px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-            margin-top: 10px;
-            color: black;
-        }
-        .full-text {
-            display: block;
-        }
-        .mobile-text {
-            display: none;
-        }
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 500px;
-            margin: 0 auto;
-            background-color: rgba(255,255,255,0.9);
-            padding: 20px;
-            border-radius: 10px;
-        }
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .contact-form button {
-            padding: 10px 20px;
-            background-color: black;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        footer {
-            background-color: #F5F5F5;
-            padding: 20px;
-            text-align: center;
-        }
-        footer a {
-            text-decoration: none;
-            color: #333;
-            margin: 0 5px;
-        }
-        .contact-form a {
-            text-decoration: none;
-            color: #333;
-            margin: 0 5px;
-        }
-        .contact-form a:hover, footer a:hover {
-            text-decoration: underline;
-        }
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 10px;
-            z-index: 1001;
-        }
-        .hamburger span {
-            display: block;
-            width: 25px;
-            height: 3px;
-            background-color: #333;
-            margin: 5px 0;
-            transition: all 0.3s ease;
-        }
-        .mobile-nav {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            z-index: 1000;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        .mobile-nav.active {
-            display: flex;
-        }
-        .mobile-nav a {
-            color: white;
-            font-size: 24px;
-            text-decoration: none;
-            margin: 15px 0;
-            text-align: center;
-        }
-        .mobile-nav a:hover {
-            text-decoration: underline;
-        }
-        .close-nav {
-            display: none;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: none;
-            border: none;
-            font-size: 30px;
-            color: white;
-            cursor: pointer;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            line-height: 40px;
-        }
-        .seo-keywords {
-            display: none;
-        }
-        @media (max-width: 768px) {
-            .header {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                padding: 10px 20px;
-            }
-            .nav {
-                display: none;
-            }
-            .hamburger {
-                display: block;
-            }
-            .close-nav {
-                display: flex;
-            }
-            .header-logo {
-                display: flex;
-                align-items: center;
-            }
-            .nav a {
-                margin: 8px 0;
-            }
-            .nav a:not(:last-child)::after {
-                content: '|';
-                right: -10px;
-            }
-            .hero h1 {
-                font-size: 28px;
-            }
-            .hero p {
-                font-size: 16px;
-            }
-            .hero, .section {
-                border: 15px solid #F5F5F5;
-            }
-            #why-alabang.section {
-                height: 350px;
-                background-size: cover;
-                background-position: center;
-            }
-            .text-slide h3 {
-                font-size: 18px;
-                margin: 5px 10px;
-            }
-            .text-slide p {
-                font-size: 14px;
-                margin: 5px 10px;
-                max-width: 90%;
-            }
-            .text-slide .full-text {
-                display: none;
-            }
-            .text-slide .mobile-text {
-                display: block;
-                font-size: 14px;
-                margin: 5px 10px;
-                max-width: 90%;
-                background-color: rgba(0, 0, 0, 0.15);
-                padding: 10px;
-                border-radius: 5px;
-                color: white;
-                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-            }
-            .profile-text .full-text {
-                display: none;
-            }
-            .profile-text .mobile-text {
-                display: block;
-                font-size: 14px;
-                margin: 5px 0;
-            }
-            .profile-text .contact-number {
-                font-size: 12px;
-                margin: 5px 0;
-            }
-            .profile-text .license-info {
-                display: block;
-                margin-top: 5px;
-            }
-            .feature-box {
-                text-align: center;
-            }
-            .feature-box .full-text {
-                display: none;
-            }
-            .feature-box .mobile-text {
-                display: block;
-                font-size: 12px;
-                margin: 5px 0;
-                padding: 5px;
-                border: none;
-                box-shadow: none;
-            }
-            .feature-box button {
-                font-size: 12px;
-                padding: 8px 12px;
-            }
-            #services p.summary, #spaces p.summary {
-                font-size: 14px;
-                margin: 0 10px 20px;
-            }
-            #contact p.intro {
-                font-size: 14px;
-                margin: 0 10px 20px;
-            }
-            .profile img {
-                width: 200px;
-                height: 200px;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'josefin': ['"Josefin Sans"', 'sans-serif'],
+              'work': ['"Work Sans"', 'sans-serif'],
+            },
+            typography: ({ theme }) => ({
+              DEFAULT: {
+                css: {
+                  '--tw-prose-body': theme('colors.gray[600]'),
+                  '--tw-prose-headings': theme('colors.gray[800]'),
+                  '--tw-prose-links': theme('colors.blue[600]'),
+                  '--tw-prose-bold': theme('colors.gray[800]'),
+                  '--tw-prose-bullets': theme('colors.gray[600]'),
+                  '--tw-prose-quotes': theme('colors.gray[600]'),
+                  '--tw-prose-quote-borders': theme('colors.gray[300]'),
+                },
+                invert: {
+                  css: {
+                    '--tw-prose-body': theme('colors.gray[300]'),
+                    '--tw-prose-headings': theme('colors.white'),
+                    '--tw-prose-links': theme('colors.blue[400]'),
+                    '--tw-prose-bold': theme('colors.white'),
+                    '--tw-prose-bullets': theme('colors.gray[400]'),
+                    '--tw-prose-quotes': theme('colors.gray[300]'),
+                    '--tw-prose-quote-borders': theme('colors.gray[600]'),
+                  },
+                },
+              },
+            }),
+          },
+        },
+      }
+    </script>
 </head>
-<body>
-    <div class="header">
-        <div class="header-logo">
-            <img src="logo001.png" alt="Alabang Offices Logo">
-            <span>Alabang Offices</span>
+<body class="font-work text-gray-600 bg-white flex flex-col min-h-screen">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="logo001.png" alt="Alabang Offices Logo" class="h-10 w-auto">
+                <a href="index.html" class="text-2xl font-josefin font-bold text-gray-800">Alabang Offices</a>
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="font-josefin text-gray-600 hover:text-blue-600 transition-colors">Home</a>
+                <a href="why-alabang.html" class="font-josefin text-gray-600 hover:text-blue-600 transition-colors">Why Alabang?</a>
+                <a href="available-spaces.html" class="font-josefin text-gray-600 hover:text-blue-600 transition-colors">Available Spaces</a>
+                <a href="blog.html" class="font-josefin text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+                <a href="services.html" class="font-josefin text-gray-600 hover:text-blue-600 transition-colors">Services</a>
+                <a href="contact.html" class="font-josefin text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
+            </nav>
+            <button class="md:hidden hamburger p-2 focus:outline-none" aria-label="Toggle menu">
+                <span class="block w-6 h-0.5 bg-gray-600 mb-1.5"></span>
+                <span class="block w-6 h-0.5 bg-gray-600 mb-1.5"></span>
+                <span class="block w-6 h-0.5 bg-gray-600"></span>
+            </button>
         </div>
-        <button class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <nav class="nav">
-            <a href="#home">Home</a>
-            <a href="#why-alabang">Why Alabang?</a>
-            <a href="#spaces">Available Spaces</a>
-            <a href="#services">Services</a>
-            <a href="blog.html">Blog</a>
-            <a href="#contact">Contact</a>
+        <nav class="mobile-nav hidden md:hidden fixed inset-0 bg-gray-800 bg-opacity-90 flex flex-col justify-center items-center space-y-6">
+            <button class="close-nav absolute top-4 right-4 text-white text-3xl" aria-label="Close menu">&times;</button>
+            <a href="index.html" class="font-josefin text-white text-2xl hover:text-blue-400 transition-colors">Home</a>
+            <a href="why-alabang.html" class="font-josefin text-white text-2xl hover:text-blue-400 transition-colors">Why Alabang?</a>
+            <a href="available-spaces.html" class="font-josefin text-white text-2xl hover:text-blue-400 transition-colors">Available Spaces</a>
+            <a href="blog.html" class="font-josefin text-white text-2xl hover:text-blue-400 transition-colors">Blog</a>
+            <a href="services.html" class="font-josefin text-white text-2xl hover:text-blue-400 transition-colors">Services</a>
+            <a href="contact.html" class="font-josefin text-white text-2xl hover:text-blue-400 transition-colors">Contact</a>
         </nav>
-        <nav class="mobile-nav">
-            <button class="close-nav" aria-label="Close navigation">&times;</button>
-            <a href="#home">Home</a>
-            <a href="#why-alabang">Why Alabang?</a>
-            <a href="#spaces">Available Spaces</a>
-            <a href="#services">Services</a>
-            <a href="blog.html">Blog</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </div>
+    </header>
 
-    <div class="hero" id="home">
-        <h1>Find the Best Offices in Alabang</h1>
-        <p>We help businesses find the Best Office in the heart of Muntinlupa’s business district.</p>
-        <button class="cta-button" onclick="window.location.href='#contact'">Tell Us Your Requirements</button>
-    </div>
+    <main class="flex-grow">
+        <section class="hero relative min-h-[60vh] flex flex-col items-center justify-center text-center text-white bg-cover bg-center" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hero-image.jpg');">
+            <h1 class="font-josefin text-4xl md:text-6xl font-bold mb-4">Find the Best Offices in Alabang</h1>
+            <p class="font-work text-lg md:text-xl max-w-2xl mb-6">Discover Alabang’s Best Office Spaces for Your Business Growth</p>
+            <a href="contact.html" class="font-josefin bg-gray-600 text-white px-6 py-3 rounded-md hover:bg-blue-600 transition-colors">Tell Us Your Requirements</a>
+        </section>
 
-    <div class="section" id="why-alabang">
-        <h2>Why Alabang?</h2>
-        <div class="text-slideshow">
-            <div class="text-slides-container">
-                <div class="text-slide">
-                    <h3>A Strategic Location for Growth</h3>
-                    <p class="full-text">Alabang is a gem for any business looking to grow. Tucked in southern Metro Manila, it’s got easy access to highways like SLEX and is close to the airport—perfect for connecting with clients. Plus, its residential vibe means shorter commutes for your team. It’s a friendly, strategic spot that blends convenience with opportunity.</p>
-                    <p class="mobile-text">Alabang offers easy access to SLEX and the airport, ideal for business connections and shorter team commutes.</p>
+        <section class="container mx-auto py-12 px-4">
+            <h2 class="font-josefin text-3xl md:text-4xl font-bold text-gray-800 text-center mb-12">Why Choose Alabang Offices?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6 bg-gray-100 rounded-lg shadow-sm">
+                    <h3 class="font-josefin text-xl font-bold text-blue-600 mb-3">Precision Office Matching</h3>
+                    <p class="font-work text-gray-600">We curate office spaces in Alabang’s top districts, tailored to your business size, budget, and goals, from 24 sqm suites to 2,300 sqm floors.</p>
                 </div>
-                <div class="text-slide">
-                    <h3>A Thriving Business Ecosystem</h3>
-                    <p class="full-text">Alabang stands out with its vibrant mix of modern offices like Filinvest City and Northgate Cyberzone, green spaces, and lifestyle spots. It’s a hub that attracts tech startups, large corporations, and creative teams, providing excellent networking and talent opportunities. The nearby Westgate Center and Alabang Town Center offer cozy cafés and upscale dining options for brainstorming sessions or client meetings. It’s a lively setting that boosts both work and enjoyment.</p>
-                    <p class="mobile-text">Alabang’s modern offices, green spaces, and lifestyle hubs like Westgate Center attract startups and corporations.</p>
+                <div class="p-6 bg-gray-100 rounded-lg shadow-sm">
+                    <h3 class="font-josefin text-xl font-bold text-blue-600 mb-3">Expert Leasing Guidance</h3>
+                    <p class="font-work text-gray-600">Get strategic advice on lease terms and market trends from Jayjay Medina, a licensed broker with over a decade of experience.</p>
                 </div>
-                <div class="text-slide">
-                    <h3>Quality of Life Meets Professional Appeal</h3>
-                    <p class="full-text">Alabang offers a refreshing mix of work and relaxation. It’s calmer than central Manila, with green spaces and parks like River Park to unwind. Your team can enjoy a quick break or weekend outings at local malls, keeping spirits high. The office options here are impressive yet budget-friendly—a great pick for anyone aiming to settle in comfortably.</p>
-                    <p class="mobile-text">Alabang blends work and relaxation with green spaces, malls, and cost-effective offices.</p>
+                <div class="p-6 bg-gray-100 rounded-lg shadow-sm">
+                    <h3 class="font-josefin text-xl font-bold text-blue-600 mb-3">Market Insights</h3>
+                    <p class="font-work text-gray-600">Stay informed with our Q3 2025 report, detailing rental rates and trends in Filinvest City, Northgate Cyberzone, and Madrigal Business Park.</p>
                 </div>
             </div>
-            <div class="slideshow-buttons">
-                <button onclick="showTextSlide(0)"></button>
-                <button onclick="showTextSlide(1)"></button>
-                <button onclick="showTextSlide(2)"></button>
-            </div>
-        </div>
-    </div>
+        </section>
 
-    <div class="section" id="spaces">
-        <h2>Available Spaces</h2>
-        <p class="summary">Explore premier office spaces in Alabang’s top business districts, tailored to your needs. Contact us for current availability.</p>
-        <div class="features">
-            <div class="feature-box">
-                Spectrum at Filinvest Corporate City
-                <div class="tooltip full-text">At the heart of the city’s business landscape, the Spectrum District stands as its economic core. Surrounded by major roads—Corporate Avenue, Commerce Avenue, and Filinvest Avenue—it serves as the central office hub, home to top local and multinational companies. The district also features upscale residences, premier hotels, and vibrant commercial spaces that reflect the dynamic spirit of Filinvest City as a premier central business district.</div>
-                <div class="tooltip mobile-text">Spectrum District, in Filinvest City, is a central office hub with top companies, hotels, and vibrant spaces.</div>
-                <button onclick="window.location.href='#contact'">Inquire Now</button>
-            </div>
-            <div class="feature-box">
-                Northgate Cyberzone
-                <div class="tooltip full-text">Northgate Cyberzone is an 18.7-hectare, PEZA-registered IT park located at the heart of Filinvest City. Dubbed the BPO and IT hub of the South, it offers a dynamic, campus-style environment tailored to the needs of tech-driven businesses. It’s home to a wide range of industries—including BPOs, KPOs, call centers, fintech, e-commerce, and creative tech such as software and multimedia design. With its strategic location, robust infrastructure, and 24/7 operations, Northgate Cyberzone continues to attract top-tier companies and talent from across the metro.</div>
-                <div class="tooltip mobile-text">Northgate Cyberzone, a PEZA-registered IT park, is a tech hub for BPOs, fintech, and creative industries.</div>
-                <button onclick="window.location.href='#contact'">Inquire Now</button>
-            </div>
-            <div class="feature-box">
-                Madrigal Business Park
-                <div class="tooltip full-text">Madrigal Business Park is a master-planned commercial district in Alabang, Muntinlupa. Known for its wide roads, green open spaces, and low-density layout, it offers a calm yet connected business environment. Strategically located near major roads and lifestyle hubs like Alabang Town Center, it is highly accessible. Home to corporate offices, banks, and upscale retail, it blends business convenience with lifestyle appeal—making Madrigal Business Park a preferred address for companies seeking a premium location in the South.</div>
-                <div class="tooltip mobile-text">Madrigal Business Park offers a calm, accessible business area with offices, banks, and retail near Alabang Town Center.</div>
-                <button onclick="window.location.href='#contact'">Inquire Now</button>
-            </div>
-        </div>
-    </div>
+        <section class="container mx-auto py-12 px-4 bg-gray-50">
+            <h2 class="font-josefin text-3xl md:text-4xl font-bold text-gray-800 text-center mb-12">Tell Us Your Requirements</h2>
+            <form action="https://formspree.io/f/xjkolwlo" method="POST" class="max-w-md mx-auto space-y-6">
+                <div>
+                    <label for="name" class="font-josefin block text-sm font-medium text-gray-600 mb-1">Your Name</label>
+                    <input type="text" name="name" id="name" required class="font-work w-full p-3 border border-gray-300 rounded-md focus:ring-blue-600 focus:border-blue-600">
+                </div>
+                <div>
+                    <label for="email" class="font-josefin block text-sm font-medium text-gray-600 mb-1">Email Address</label>
+                    <input type="email" name="email" id="email" required class="font-work w-full p-3 border border-gray-300 rounded-md focus:ring-blue-600 focus:border-blue-600">
+                </div>
+                <div>
+                    <label for="contact_number" class="font-josefin block text-sm font-medium text-gray-600 mb-1">Contact Number</label>
+                    <input type="tel" name="contact_number" id="contact_number" required class="font-work w-full p-3 border border-gray-300 rounded-md focus:ring-blue-600 focus:border-blue-600">
+                </div>
+                <div>
+                    <label for="space_required" class="font-josefin block text-sm font-medium text-gray-600 mb-1">Required Space (sqm)</label>
+                    <input type="text" name="space_required" id="space_required" class="font-work w-full p-3 border border-gray-300 rounded-md focus:ring-blue-600 focus:border-blue-600">
+                </div>
+                <div>
+                    <label for="message" class="font-josefin block text-sm font-medium text-gray-600 mb-1">Additional Requirements</label>
+                    <textarea name="message" id="message" rows="4" class="font-work w-full p-3 border border-gray-300 rounded-md focus:ring-blue-600 focus:border-blue-600"></textarea>
+                </div>
+                <button type="submit" class="font-josefin w-full bg-gray-600 text-white p-3 rounded-md hover:bg-blue-600 transition-colors">Send Requirements</button>
+            </form>
+        </section>
+    </main>
 
-    <div class="section" id="services">
-        <h2>Our Services</h2>
-        <p class="summary">At Office Spaces Alabang, we specialize in helping businesses find the ideal workspace in the heart of the South. Whether you’re a startup, a growing team, or a large company, we offer personalized services to make office leasing easy, efficient, and stress-free.</p>
-        <div class="features">
-            <div class="feature-box">
-                Office Matching
-                <div class="tooltip">We listen to your needs and match you with the best available office spaces in Alabang — from PEZA-accredited buildings to premium-grade towers. We consider your size, budget, preferences, and timeline to present options that fit your business perfectly.</div>
-            </div>
-            <div class="feature-box">
-                Leasing Consultation
-                <div class="tooltip">Not sure where to start? We provide expert advice on lease terms, budgeting, timelines, and how to get the best deal for your business. Whether you're new to leasing or looking to relocate, we guide you every step of the way.</div>
-            </div>
-            <div class="feature-box">
-                Site Visits
-                <div class="tooltip">Get a feel for the space. We’ll schedule and accompany you on site viewings so you can experience the offices firsthand. We help you ask the right questions, evaluate the space, and make informed decisions.</div>
-            </div>
-            <div class="feature-box">
-                Lease Your Space in Alabang
-                <div class="tooltip">Do you have office space for lease? We work with property owners and landlords to connect them with serious and qualified tenants. Let us help you market your space effectively and find the right match, fast.</div>
-            </div>
+    <footer class="bg-gray-200 py-6 px-4">
+        <div class="container mx-auto text-center">
+            <p class="font-work text-gray-600 mb-2">Follow us: 
+                <a href="https://www.linkedin.com/in/jayjaymedina/" class="text-blue-600 hover:underline">LinkedIn</a> | 
+                <a href="https://www.facebook.com/alabangoffices" class="text-blue-600 hover:underline">Facebook</a> | 
+                <a href="https://www.instagram.com/alabang.offices/" class="text-blue-600 hover:underline">Instagram</a>
+            </p>
+            <p class="font-work text-gray-600 mb-2">
+                <a href="contact.html" class="text-blue-600 hover:underline">Contact Us</a> | 
+                <a href="services.html" class="text-blue-600 hover:underline">Our Services</a>
+            </p>
+            <p class="font-work text-gray-600">© 2025 Alabang Offices. All rights reserved.</p>
         </div>
-    </div>
-
-    <div class="section" id="contact">
-        <h2>Let’s Talk</h2>
-        <p class="intro">Tell Us Your Requirements.</p>
-        <form action="https://formspree.io/f/xjkolwlo" method="POST" class="contact-form">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <input type="tel" name="contact_number" placeholder="Your Contact Number" required>
-            <textarea rows="5" name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-            <p>Or contact Jayjay via: <a href="https://wa.me/+639958128108">WhatsApp</a> | <a href="viber://chat?number=+639958128108">Viber</a></p>
-            <p>Follow us: <a href="https://www.linkedin.com/in/jayjaymedina/">LinkedIn</a> | <a href="https://www.facebook.com/alabangoffices">Facebook</a> | <a href="https://www.instagram.com/alabang.offices/">Instagram</a></p>
-        </form>
-        <div class="profile">
-            <img src="DPjayjay.png" alt="Jayjay Medina, Licensed Real Estate Broker in Alabang">
-            <div class="profile-text">
-                <h3>Jayjay Medina</h3>
-                <p>Licensed Real Estate Broker (REBL 18995)</p>
-                <p class="contact-number">+63 995 812 8108</p>
-                <p class="contact-number">+63 968 2399 839</p>
-                <p class="full-text">Jayjay Medina is a licensed real estate broker with over a decade of experience, specializing in leasing office spaces in Alabang, Muntinlupa. He helps businesses secure the ideal workspace to match their operations and growth plans. With in-depth knowledge of Alabang’s commercial market and a reputation for professionalism and personalized service, Jayjay ensures a smooth and efficient leasing experience from start to finish.</p>
-                <p class="mobile-text">Specializes in office space leasing in Alabang—helping businesses find the right workspace with ease.</p>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <p><a href="#contact">About</a> | <a href="#contact">Contact Info</a> | Social Media: <a href="https://www.facebook.com/alabangoffices">@alabangoffices</a></p>
-        <p>Disclaimer: All information on this website is for general informational purposes only and may be subject to change.</p>
     </footer>
 
-    <div class="seo-keywords">
+    <div class="seo-keywords hidden">
         offices in Alabang, Alabang office spaces, Muntinlupa office lease, PEZA office Alabang, Filinvest City offices, Northgate Cyberzone office space, Madrigal Business Park lease, commercial real estate Alabang, office rental Muntinlupa, Alabang BPO office
     </div>
 
     <script>
-        const hamburger = document.querySelector('.hamburger');
-        const mobileNav = document.querySelector('.mobile-nav');
-        const closeNav = document.querySelector('.close-nav');
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.querySelector('.hamburger');
+            const mobileNav = document.querySelector('.mobile-nav');
+            const closeNav = document.querySelector('.close-nav');
 
-        hamburger.addEventListener('click', () => {
-            mobileNav.classList.toggle('active');
-        });
-
-        closeNav.addEventListener('click', () => {
-            mobileNav.classList.remove('active');
-        });
-
-        document.querySelectorAll('.mobile-nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileNav.classList.remove('active');
+            hamburger.addEventListener('click', () => {
+                mobileNav.classList.toggle('hidden');
             });
-        });
 
-        let currentTextSlide = 0;
-        const textSlidesContainer = document.querySelector('.text-slides-container');
-        const textButtons = document.querySelectorAll('#why-alabang .slideshow-buttons button');
-        const totalTextSlides = 3;
-
-        function showTextSlide(index) {
-            textSlidesContainer.style.transform = `translateX(-${index * 33.33}%)`;
-            textButtons.forEach((button, i) => {
-                button.classList.toggle('active', i === index);
+            closeNav.addEventListener('click', () => {
+                mobileNav.classList.add('hidden');
             });
-            currentTextSlide = index;
-        }
 
-        showTextSlide(0);
-
-        setInterval(() => {
-            currentTextSlide = (currentTextSlide + 1) % totalTextSlides;
-            showTextSlide(currentTextSlide);
-        }, 7000);
-
-        textButtons.forEach((button, index) => {
-            button.addEventListener('click', () => showTextSlide(index));
+            document.querySelectorAll('.mobile-nav a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileNav.classList.add('hidden');
+                });
+            });
         });
     </script>
 </body>
