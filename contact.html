@@ -89,24 +89,20 @@
             <h2 class="font-josefin text-3xl md:text-4xl font-bold text-gray-800 text-center mb-12">Send Us a Message</h2>
             <form action="https://formspree.io/f/xjkolwlo" method="POST" class="max-w-md mx-auto space-y-6">
                 <div>
-                    <label for="fullName" class="font-josefin block text-sm font-medium text-gray-600 mb-1">Full Name</label>
-                    <input type="text" name="fullName" id="fullName" required class="font-work w-full p-3 border border-gray-300 rounded-md focus:ring-blue-600 focus:border-blue-600">
-                </div>
-                <div>
-                    <label for="companyName" class="font-josefin block text-sm font-medium text-gray-600 mb-1">Company Name</label>
-                    <input type="text" name="companyName" id="companyName" class="font-work w-full p-3 border border-gray-300 rounded-md focus:ring-blue-600 focus:border-blue-600">
+                    <label for="name" class="font-josefin block text-sm font-medium text-gray-600 mb-1">Your Name and Company</label>
+                    <input type="text" name="name" id="name" required class="font-work w-full p-3 border border-gray-300 rounded-md focus:ring-blue-600 focus:border-blue-600">
                 </div>
                 <div>
                     <label for="email" class="font-josefin block text-sm font-medium text-gray-600 mb-1">Email Address</label>
                     <input type="email" name="email" id="email" required class="font-work w-full p-3 border border-gray-300 rounded-md focus:ring-blue-600 focus:border-blue-600">
                 </div>
                 <div>
-                    <label for="contactNumber" class="font-josefin block text-sm font-medium text-gray-600 mb-1">Contact Number</label>
-                    <input type="text" name="contactNumber" id="contactNumber" class="font-work w-full p-3 border border-gray-300 rounded-md focus:ring-blue-600 focus:border-blue-600">
+                    <label for="contact_number" class="font-josefin block text-sm font-medium text-gray-600 mb-1">Contact Number</label>
+                    <input type="tel" name="contact_number" id="contact_number" required class="font-work w-full p-3 border border-gray-300 rounded-md focus:ring-blue-600 focus:border-blue-600">
                 </div>
                 <div>
-                    <label for="message" class="font-josefin block text-sm font-medium text-gray-600 mb-1">Your Message / Requirements</label>
-                    <textarea name="message" id="message" rows="4" class="font-work w-full p-3 border border-gray-300 rounded-md focus:ring-blue-600 focus:border-blue-600"></textarea>
+                    <label for="requirements" class="font-josefin block text-sm font-medium text-gray-600 mb-1">Required Space (sqm) and Other Requirements</label>
+                    <textarea name="requirements" id="requirements" rows="4" class="font-work w-full p-3 border border-gray-300 rounded-md focus:ring-blue-600 focus:border-blue-600"></textarea>
                 </div>
                 <button type="submit" class="font-josefin w-full bg-gray-600 text-white p-3 rounded-md hover:bg-blue-600 transition-colors">Submit Inquiry</button>
             </form>
