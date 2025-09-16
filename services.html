@@ -124,7 +124,7 @@
             <p class="font-work text-lg text-gray-600 mb-8 max-w-2xl mx-auto">Let us help you discover the ideal office space in Alabang. Submit your inquiry below, and our team will get back to you promptly.</p>
             <form action="https://formspree.io/f/xjkolwlo" method="POST" class="max-w-md mx-auto space-y-6">
                 <div>
-                    <label for="name" class="font-josefin block text-sm font-medium text-gray-600 mb-1">Your Name</label>
+                    <label for="name" class="font-josefin block text-sm font-medium text-gray-600 mb-1">Your Name and Company</label>
                     <input type="text" name="name" id="name" required class="font-work w-full p-3 border border-gray-300 rounded-md focus:ring-blue-600 focus:border-blue-600">
                 </div>
                 <div>
@@ -132,8 +132,12 @@
                     <input type="email" name="email" id="email" required class="font-work w-full p-3 border border-gray-300 rounded-md focus:ring-blue-600 focus:border-blue-600">
                 </div>
                 <div>
-                    <label for="message" class="font-josefin block text-sm font-medium text-gray-600 mb-1">Your Inquiry</label>
-                    <textarea name="message" id="message" rows="4" class="font-work w-full p-3 border border-gray-300 rounded-md focus:ring-blue-600 focus:border-blue-600"></textarea>
+                    <label for="contact_number" class="font-josefin block text-sm font-medium text-gray-600 mb-1">Contact Number</label>
+                    <input type="tel" name="contact_number" id="contact_number" required class="font-work w-full p-3 border border-gray-300 rounded-md focus:ring-blue-600 focus:border-blue-600">
+                </div>
+                <div>
+                    <label for="requirements" class="font-josefin block text-sm font-medium text-gray-600 mb-1">Required Space (sqm) and Other Requirements</label>
+                    <textarea name="requirements" id="requirements" rows="4" class="font-work w-full p-3 border border-gray-300 rounded-md focus:ring-blue-600 focus:border-blue-600"></textarea>
                 </div>
                 <button type="submit" class="font-josefin w-full bg-gray-600 text-white p-3 rounded-md hover:bg-blue-600 transition-colors">Submit Inquiry</button>
             </form>
